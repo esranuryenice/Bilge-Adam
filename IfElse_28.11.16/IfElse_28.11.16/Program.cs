@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IfElse_28._11._16_
+namespace IfElse
 {
     class Program
     {
