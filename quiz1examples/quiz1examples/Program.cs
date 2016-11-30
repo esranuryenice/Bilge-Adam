@@ -10,6 +10,27 @@ namespace quiz1examples
     {
         static void Main(string[] args)
         {
+            #region Algoritma
+            /*
+            Belirli bir problemi çözen veya amacı gerçekleştiren yöntemlere algoritma denir.
+            
+            Bir algoritmanın temel özellikleri:
+            * Başlangıcı ve sonu olmalı
+            * Adım adım ilerlemeli
+            * Basit ve anlaşılır olmalı
+
+            Faktöriyel Hesaplama
+            Adım 1. Başla
+            Adım 2. sayi Gir
+            Adım 3. sayac = 1 fakto = 1
+            Adım 4. fakto = fakto * sayac
+            Adım 5. sayac++
+            Adım 6. sayac <= sayi ise 4. adıma dön değilse 7. adıma git
+            Adım 7. fakto yu yazdır.
+            Adım 8. Bitir
+            */
+            #endregion
+
             #region 4Islem
             /*4 işlem seç ve şeklini yıldızlar ile ekrana yansıt ve kullanıcı istediği sürece devam et*/
 
