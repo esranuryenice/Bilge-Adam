@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SwitchCase_28._11._16_
-
+namespace SwitchCase
+    
 {
     class Program
     {

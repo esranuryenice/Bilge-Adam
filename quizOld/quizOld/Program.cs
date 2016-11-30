@@ -33,163 +33,164 @@ namespace quizOld
 
             #region islemSec
 
-            //bool durum = true;
-            //char islem;
+            bool durum = true;
+            char islem;
 
-            //while (durum)
-            //{
-            //    Console.WriteLine("Dört işlemden birini seçiniz: (+,-,*,/)");
-            //    islem = Convert.ToChar(Console.ReadLine());
+            while (durum)
+            {
+                Console.WriteLine("Dört işlemden birini seçiniz: (+,-,*,/)");
+                islem = Convert.ToChar(Console.ReadLine());
 
-            //    Console.WriteLine();
+                Console.WriteLine();
 
-            //    #region switchcase
-            //    switch (islem)
-            //    {
-            //        case '+':
-            //            for (int i = 0; i <= 4; i++)
-            //            {
-            //                for (int j = 0; j <= 4; j++)
-            //                {
-            //                    if (i == 2)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else if (i != 2 && j == 2)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else
-            //                    {
-            //                        Console.Write(" ");
-            //                    }
-            //                }
-            //                Console.WriteLine();
-            //            }
-            //            break;
+                #region switchcase
+                switch (islem)
+                {
+                    case '+':
+                        for (int i = 0; i <= 4; i++)
+                        {
+                            for (int j = 0; j <= 4; j++)
+                            {
+                                if (i == 2)
+                                {
+                                    Console.Write("*");
+                                }
+                                else if (i != 2 && j == 2)
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        break;
 
-            //        case '-':
-            //            for (int i = 0; i <= 4; i++)
-            //            {
-            //                for (int j = 0; j <= 4; j++)
-            //                {
-            //                    if (i == 2)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else
-            //                    {
-            //                        Console.Write(" ");
-            //                    }
-            //                }
-            //                Console.WriteLine();
-            //            }
-            //            break;
+                    case '-':
+                        for (int i = 0; i <= 4; i++)
+                        {
+                            for (int j = 0; j <= 4; j++)
+                            {
+                                if (i == 2)
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        break;
 
-            //        case '*':
-            //            for (int i = 0; i <= 4; i++)
-            //            {
-            //                for (int j = 0; j <= 4; j++)
-            //                {
-            //                    if (i == j)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else if (j + i == 4)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else
-            //                    {
-            //                        Console.Write(" ");
-            //                    }
-            //                }
-            //                Console.WriteLine();
-            //            }
-            //            break;
+                    case '*':
+                        for (int i = 0; i <= 4; i++)
+                        {
+                            for (int j = 0; j <= 4; j++)
+                            {
+                                if (i == j)
+                                {
+                                    Console.Write("*");
+                                }
+                                else if (j + i == 4)
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        break;
 
-            //        case '/':
-            //            for (int i = 0; i <= 4; i++)
-            //            {
-            //                for (int j = 0; j <= 4; j++)
-            //                {
-            //                    if (i == 2)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else if ((i == 1 || i == 3) && j == 2)
-            //                    {
-            //                        Console.Write("*");
-            //                    }
-            //                    else
-            //                    {
-            //                        Console.Write(" ");
-            //                    }
-            //                }
-            //                Console.WriteLine();
-            //            }
-            //            break;
+                    case '/':
+                        for (int i = 0; i <= 4; i++)
+                        {
+                            for (int j = 0; j <= 4; j++)
+                            {
+                                if (i == 2)
+                                {
+                                    Console.Write("*");
+                                }
+                                else if ((i == 1 || i == 3) && j == 2)
+                                {
+                                    Console.Write("*");
+                                }
+                                else
+                                {
+                                    Console.Write(" ");
+                                }
+                            }
+                            Console.WriteLine();
+                        }
+                        break;
 
-            //        default:
-            //            Console.WriteLine("Yanlış Bir Seçim Yaptınız.");
-            //            break;
-            //    }
-            //    #endregion
+                    default:
+                        Console.WriteLine("Yanlış Bir Seçim Yaptınız.");
+                        break;
+                }
+                #endregion
 
-            //    #region DevamEtmekSorgusu
-            //    Console.WriteLine("\nDevam edelim mi? İstiyorsan \"evet\" yaz.");
-            //    string devam = Console.ReadLine();
+                #region DevamEtmekSorgusu
+                Console.WriteLine("\nDevam edelim mi? İstiyorsan \"evet\" yaz.");
+                string devam = Console.ReadLine();
 
-            //    if (devam == "evet")
-            //    {
-            //        durum = true;
-            //        Console.WriteLine();
-            //    }
-            //    else
-            //    {
-            //        durum = false; ;
-            //        Console.WriteLine("Tekrar Görüşmek üzere :)");
-            //    }
-            //    #endregion
+                if (devam == "evet")
+                {
+                    durum = true;
+                    Console.WriteLine();
+                }
+                else
+                {
+                    durum = false; ;
+                    Console.WriteLine("Tekrar Görüşmek üzere :)");
+                }
+                #endregion
 
-            //}
-            //Console.ReadKey();
+            }
+            Console.ReadKey();
 
             #endregion
 
             #region UsAlma
 
-            Console.Write("Taban Değerini Girin:");
-            int taban = Convert.ToInt32(Console.ReadLine());
-            int us = 0;
-            int sonuc = 1;
+            //    Console.Write("Taban Değerini Girin:");
+            //int taban = Convert.ToInt32(Console.ReadLine());
+            //int us = 0;
+            //int sonuc = 1;
 
-            bool durum = true;
-            while (durum)
-            {
-                Console.Write("Us Değerini Girin:");
-                us = Convert.ToInt32(Console.ReadLine());
+            //bool durum = true;
+            //while (durum)
+            //{
+            //    Console.Write("Us Değerini Girin:");
+            //    us = Convert.ToInt32(Console.ReadLine());
 
-                if (us <= 0)
-                {
-                    durum = true;
-                }
-                else
-                {
-                    durum = false;
-                }
-            }
+            //    if (us <= 0)
+            //    {
+            //        durum = true;
+            //    }
+            //    else
+            //    {
+            //        durum = false;
+            //    }
+            //}
 
-            for (int i = 0; i < us; i++)
-            {
-                sonuc *= taban;
-            }
+            //for (int i = 0; i < us; i++)
+            //{
+            //    sonuc *= taban;
+            //}
 
-            Console.WriteLine("{0}^{1} = {2}", taban, us, sonuc);
+            //Console.WriteLine("{0}^{1} = {2}", taban, us, sonuc);
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             #endregion
         }
     }
 }
+
