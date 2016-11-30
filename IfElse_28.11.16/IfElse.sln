@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IfElse_28.11.16", "IfElse_28.11.16\IfElse_28.11.16.csproj", "{68109E2F-3D45-4326-9027-22C5C10A81E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IfElse", "IfElse_28.11.16\IfElse.csproj", "{68109E2F-3D45-4326-9027-22C5C10A81E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
