@@ -45,7 +45,74 @@ namespace Examples
 
             #endregion
 
+            #region reverseTheNumber
+            // Get a Number and Display the Number with its Reverse
 
+            //int num, reverse = 0;
+            //Console.WriteLine("Enter a Number : ");
+            //num = int.Parse(Console.ReadLine());
+            //while (num != 0)
+            //{
+            //    reverse = reverse * 10;
+            //    reverse = reverse + num % 10;
+            //    num = num / 10;
+            //}
+            //Console.WriteLine("Reverse of Entered Number is : " + reverse);
+            //Console.ReadLine();
+
+            #endregion
+
+            #region binaryTriangle
+
+            //int p, lastInt = 0, input;
+            //Console.Write("Enter the Number of Rows : ");
+            //input = int.Parse(Console.ReadLine());
+            //for (int i = 1; i <= input; i++)
+            //{
+            //    for (p = 1; p <= i; p++)
+            //    {
+            //        if (lastInt == 1)
+            //        {
+            //            Console.Write("0");
+            //            lastInt = 0;
+            //        }
+            //        else if (lastInt == 0)
+            //        {
+            //            Console.Write("1");
+            //            lastInt = 1;
+            //        }
+            //    }
+            //    Console.Write("\n");
+            //}
+            //Console.ReadLine();
+
+
+
+            #endregion
+
+            #region numberOf1s
+
+            //int m, count = 0;
+            //Console.WriteLine("Enter the Limit : ");
+            //m = int.Parse(Console.ReadLine());
+            //int[] a = new int[m];
+            //Console.WriteLine("Enter the Numbers :");
+            //for (int i = 0; i < m; i++)
+            //{
+            //    a[i] = Convert.ToInt32(Console.ReadLine());
+            //}
+            //foreach (int o in a)
+            //{
+            //    if (o == 1)
+            //    {
+            //        count++;
+            //    }
+            //}
+            //Console.WriteLine("Number of 1's in the Entered Number : ");
+            //Console.WriteLine(count);
+            //Console.ReadLine();
+
+            #endregion
         }
     }
 }
