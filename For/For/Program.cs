@@ -107,18 +107,18 @@ namespace For
 
             #region MultiplicationTable
 
-            for (int i = 1; i <= 10; i++)
-            {
-                for (int j = 0; j <= 10; j++)
-                {
-                    Console.WriteLine("{0} x {1}\t = {2}", i, j, i*j);
-                }
-                Console.WriteLine("**************");
-            }
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    for (int j = 0; j <= 10; j++)
+            //    {
+            //        Console.WriteLine("{0} x {1}\t = {2}", i, j, i*j);
+            //    }
+            //    Console.WriteLine("**************");
+            //}
 
 
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             #endregion
         }
