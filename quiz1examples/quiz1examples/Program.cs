@@ -197,7 +197,7 @@ namespace quiz1examples
 
             #endregion
 
-            #region prime
+            #region prime[n..m]
 
             //int n = 3;
             //int m = 50;
@@ -226,6 +226,28 @@ namespace quiz1examples
 
             #endregion
 
+            #region isItPrime
+
+            //int num = 1789;
+            //bool prime = true;
+            //int divider = 2;
+            //int maxDvider = (int)Math.Sqrt(num);
+                        
+            //while (prime && (divider <= maxDvider))
+            //{
+            //    if (num % divider == 0)
+            //    {
+            //        prime = false;
+
+            //    }
+            //    divider++;
+            //}
+            //Console.WriteLine("Prime? " + prime);
+
+            //Console.ReadKey();
+
+            #endregion
+
             #region triangleWithNumbers
 
             //int n = 7;
@@ -243,16 +265,16 @@ namespace quiz1examples
 
             #region triangleWithStars
 
-            int n = 7;
-            for (int row = 1; row <= n; row++)
-            {
-                for (int col = 1; col <= row; col++)
-                {
-                    Console.Write("*" + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.ReadKey();
+            //int n = 7;
+            //for (int row = 1; row <= n; row++)
+            //{
+            //    for (int col = 1; col <= row; col++)
+            //    {
+            //        Console.Write("*" + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.ReadKey();
 
             #endregion
         }
