@@ -180,24 +180,81 @@ namespace quiz1examples
 
             #region randomMatrix
 
-            Random rnd = new Random();
-            int randomNumber;
+            //Random rnd = new Random();
+            //int randomNumber;
 
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    randomNumber = rnd.Next(1, 9);
-                    Console.Write(randomNumber + " ");
-                }
-                Console.WriteLine();
-            }
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        randomNumber = rnd.Next(1, 9);
+            //        Console.Write(randomNumber + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             #endregion
 
+            #region prime
 
+            //int n = 3;
+            //int m = 50;
+
+            //for (int num = n; num <= m; num++)
+            //{
+            //    bool prime = true;
+            //    int divider = 2;
+            //    int maxDvider = (int)Math.Sqrt(num);
+            //    while (divider <= maxDvider)
+            //    {
+            //        if (num%divider == 0)
+            //        {
+            //            prime = false;
+            //            break;
+            //        }
+            //        divider++;
+            //    }
+            //    if (prime)
+            //    {
+            //        Console.Write(" " + num);
+            //    }
+            //}
+
+            //Console.ReadKey();
+
+            #endregion
+
+            #region triangleWithNumbers
+
+            //int n = 7;
+            //for (int row = 1; row <= n; row++)
+            //{
+            //    for (int col = 1; col <= row; col++)
+            //    {
+            //        Console.Write(col + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.ReadKey();
+
+            #endregion
+
+            #region triangleWithStars
+
+            int n = 7;
+            for (int row = 1; row <= n; row++)
+            {
+                for (int col = 1; col <= row; col++)
+                {
+                    Console.Write("*" + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+
+            #endregion
         }
     }
 }
