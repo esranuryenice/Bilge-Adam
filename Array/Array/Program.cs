@@ -98,38 +98,113 @@ namespace Array
             //Console.ReadKey();
             #endregion
 
-            #region MyRegion
+            #region correspondingDay
 
-            //3 dicek -- çarş ..devam etme seçeneği ile
 
-            string[] days = new string[] {"Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
+            //string[] days = new string[] {"Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
 
-            foreach (var day in days)
-            {
-                Console.WriteLine(day);
-            }
+            ////foreach (var day in days)
+            ////{
+            ////    Console.WriteLine(day);
+            ////}
+
+            //bool answer = true;
+
+            //while (answer)
+            //{
+            //    Console.Write("\nNumber: ");
+            //    int number = Convert.ToInt32(Console.ReadLine());
+
+            //    Console.WriteLine(days[number - 1]);
+
+            //    Console.Write("\nDo you want to continue (Y/N)? ");
+            //    string ans = Convert.ToString(Console.ReadLine());
+
+            //    if (ans == "Y" || ans == "y" || ans == "yes")
+            //    {
+            //        answer = true;
+            //    }
+            //    else
+            //        answer = false;
+            //}
+
+            #endregion
+
+            #region whichMonthWhichSeason
+
+            //hangi ay hangi mevsime denk gelir user ay girsin mevsim çıksın
+
+            string[] months = new string[] {"January","February","March","April","May","June",
+                "July","August","September","October","November","December"};
+
+            string userInputString = "";
 
             bool answer = true;
 
             while (answer)
             {
-                Console.Write("Number: ");
-                int number = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Please choose 1 for entering number or 2 for entering month: ");
+                int choice = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine(days[number-1]);
-
-                Console.WriteLine("Do you want to continue ? (Y/N)");
-                string ans = Convert.ToString(Console.ReadLine());
-
-                if (true)
+                switch (choice)
                 {
+                    case 1:
+                        Console.Write("\nNumber: ");
+                        int userInput = Convert.ToInt32(Console.ReadLine());
 
+                        userInputString = months[userInput - 1];                     
+                        break;
+
+                    case 2:
+                        Console.Write("\nMonth: ");
+                        userInputString = Convert.ToString(Console.ReadLine());
+                        
+                        break;
+
+                    default:
+                        Console.WriteLine("Error: Wrong Entry !!!");
+                        break;
                 }
+
+                Console.Clear();
+
+                Console.Write("\nThe month is " + userInputString);
+
+                for (int i = 0; i < months.Length; i++)
+                {
+                    if (userInputString == months[i])
+                    {
+                        if (i == 11 || i == 0 || i == 1)
+                        {
+                            Console.Write(" and the season is Winter");
+                        }
+                        else if (i == 2 || i == 3 || i == 4)
+                        {
+                            Console.Write(" and the season is Spring");
+                        }
+                        else if (i == 5 || i == 6 || i == 7)
+                        {
+                            Console.Write(" and the season is Summer");
+                        }
+                        else
+                        {
+                            Console.Write(" and the season is Autumn");
+                        }
+
+                    }
+                }
+
+                Console.Write("\n\n\nDo you want to continue (Y/N)? ");
+                string userAnswer = Convert.ToString(Console.ReadLine());
+
+                if (userAnswer == "Y" || userAnswer == "y" || userAnswer == "yes")
+                {
+                    answer = true;
+                }
+                else
+                    answer = false;
             }
-
-
-
-            Console.ReadKey();
+           
 
 
             #endregion
