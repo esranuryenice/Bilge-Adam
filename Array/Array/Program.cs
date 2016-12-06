@@ -135,79 +135,77 @@ namespace Array
 
             //hangi ay hangi mevsime denk gelir user ay girsin mevsim çıksın
 
-            string[] months = new string[] {"january","february","march","april","may","june",
-                "july","august","september","october","november","december"};
+            //string[] months = new string[] {"january","february","march","april","may","june",
+            //    "july","august","september","october","november","december"};
 
-            string userInputString = "";
+            //string userInputString = "";
 
-            bool answer = true;
+            //bool answer = true;
 
-            while (answer)
-            {
-                Console.Write("Please choose 1 for entering number or 2 for entering month: ");
-                int choice = Convert.ToInt32(Console.ReadLine());
+            //while (answer)
+            //{
+            //    Console.Write("Please choose 1 for entering number or 2 for entering month: ");
+            //    int choice = Convert.ToInt32(Console.ReadLine());
 
-                switch (choice)
-                {
-                    case 1:
-                        Console.Write("\nNumber: ");
-                        int userInput = Convert.ToInt32(Console.ReadLine());
+            //    switch (choice)
+            //    {
+            //        case 1:
+            //            Console.Write("\nNumber: ");
+            //            int userInput = Convert.ToInt32(Console.ReadLine());
 
-                        userInputString = months[userInput - 1];
-                        break;
+            //            userInputString = months[userInput - 1];
+            //            break;
 
-                    case 2:
-                        Console.Write("\nMonth: ");
-                        userInputString = Convert.ToString(Console.ReadLine());
+            //        case 2:
+            //            Console.Write("\nMonth: ");
+            //            userInputString = Convert.ToString(Console.ReadLine());
 
-                        break;
+            //            break;
 
-                    default:
-                        Console.WriteLine("Error: Wrong Entry !!!");
-                        break;
-                }
+            //        default:
+            //            Console.WriteLine("Error: Wrong Entry !!!");
+            //            break;
+            //    }
 
-                Console.Clear();
+            //    Console.Clear();
 
-                Console.Write("\nThe month is " + userInputString);
+            //    Console.Write("\nThe month is " + userInputString);
 
-                for (int i = 0; i < months.Length; i++)
-                {
-                    if (userInputString == months[i])
-                    {
-                        if (i == 11 || i == 0 || i == 1)
-                        {
-                            Console.Write(" and the season is Winter");
-                        }
-                        else if (i == 2 || i == 3 || i == 4)
-                        {
-                            Console.Write(" and the season is Spring");
-                        }
-                        else if (i == 5 || i == 6 || i == 7)
-                        {
-                            Console.Write(" and the season is Summer");
-                        }
-                        else
-                        {
-                            Console.Write(" and the season is Autumn");
-                        }
+            //    for (int i = 0; i < months.Length; i++)
+            //    {
+            //        if (userInputString == months[i])
+            //        {
+            //            if (i == 11 || i == 0 || i == 1)
+            //            {
+            //                Console.Write(" and the season is Winter");
+            //            }
+            //            else if (i == 2 || i == 3 || i == 4)
+            //            {
+            //                Console.Write(" and the season is Spring");
+            //            }
+            //            else if (i == 5 || i == 6 || i == 7)
+            //            {
+            //                Console.Write(" and the season is Summer");
+            //            }
+            //            else
+            //            {
+            //                Console.Write(" and the season is Autumn");
+            //            }
 
-                    }
-                }
+            //        }
+            //    }
 
-                Console.Write("\n\n\nDo you want to continue (Y/N)? ");
-                string userAnswer = Convert.ToString(Console.ReadLine());
+            //    Console.Write("\n\n\nDo you want to continue (Y/N)? ");
+            //    string userAnswer = Convert.ToString(Console.ReadLine());
 
-                if (userAnswer == "Y" || userAnswer == "y" || userAnswer == "yes")
-                {
-                    answer = true;
-                    Console.Clear();
-                }
-                else
-                    answer = false;
-            }
-
-
+            //    if (userAnswer == "Y" || userAnswer == "y" || userAnswer == "yes")
+            //    {
+            //        answer = true;
+            //        Console.Clear();
+            //    }
+            //    else
+            //        answer = false;
+            //}
 
             #endregion
 
@@ -227,6 +225,64 @@ namespace Array
             //}
 
             #endregion
+
+            #region reversedArray
+
+            //int[] myArray = { 1, 2, 3, 4, 5, 6 };
+
+            //int size = myArray.Length;
+
+            //int[] reversedArray = new int[size];
+
+            //for (int i = 0; i < myArray.Length; i++)
+            //{
+            //    reversedArray[size - i - 1] = myArray[i];
+            //}
+
+            //foreach (var item in reversedArray)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+
+            #endregion
+
+            #region reversedArray2ndWay-Short
+
+            //int[] myArray = { 1, 2, 3, 4, 5, 6 };
+
+            //for (int i = myArray.Length - 1; i >= 0; i--)
+            //{
+            //    Console.Write(myArray[i] + " ");
+            //}
+
+            //Console.ReadKey();
+
+            #endregion
+
+            #region 2dArray-Different
+
+            int[,] matrix =
+            {
+                {1, 2, 3, 4}, // row 0 values
+                {5, 6, 7, 8}, // row 1 values
+            };
+
+            // The matrix size is 2 x 4 (2 rows, 4 cols)
+
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write(matrix[row,col] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
+            #endregion
+
+
+             
 
 
         }

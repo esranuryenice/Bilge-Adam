@@ -12,28 +12,28 @@ namespace list
         {
             #region List
 
-            //List<int> numbers = new List<int>(); //() içine bişey yazmazsan dynamic olur!
+            List<int> numbers = new List<int>(); //() içine bişey yazmazsan dynamic olur!
 
-            //numbers.Add(1);
+            numbers.Add(1);
 
-            //numbers.AddRange(new int[] { 2, 3, 4 });
+            numbers.AddRange(new int[] { 2, 3, 4 });
 
-            //Console.WriteLine(numbers.Count);
-            //Console.Clear();
+            Console.WriteLine(numbers.Count);
+            Console.Clear();
 
-            //foreach (var item in numbers)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            foreach (var item in numbers)
+            {
+                Console.WriteLine(item);
+            }
 
-            //Console.WriteLine();
+            Console.WriteLine();
 
-            //for (int i = 0; i < numbers.Count; i++)
-            //{
-            //    Console.WriteLine("{0} = {1}", i, numbers[i]);
-            //}
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.WriteLine("{0} = {1}", i, numbers[i]);
+            }
 
-            //Console.ReadKey();
+            Console.ReadKey();
 
             #endregion
 
