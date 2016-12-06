@@ -118,14 +118,13 @@ namespace Examples
 
             string str = Console.ReadLine();
 
-            int intValue;
+            int number;
 
-            bool parseSuccess = Int32.TryParse(str, out intValue);
+            bool parseSuccess = Int32.TryParse(str, out number);
 
-            Console.WriteLine(parseSuccess ? "The square of the number is " + intValue * intValue + "." : "Invalid number!");
+            Console.WriteLine(parseSuccess ? "The square of the number is "+ number * number + "." : "Invalid number!");
 
             Console.ReadKey();
-
             #endregion
         }
     }

@@ -118,55 +118,69 @@ namespace loopWhile_29._11._16_
 
             #region even-odd
 
-            Console.WriteLine("enter a number: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("enter a operation: ");
-            string operation = Convert.ToString(Console.ReadLine());
+            //Console.WriteLine("enter a number: ");
+            //int num = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("enter a operation: ");
+            //string operation = Convert.ToString(Console.ReadLine());
 
-            int counter = 0;
-            long resultOfSum = 0;
-            long resultOfProduct = 1;
-
-
-            switch (operation)
-            {
-                case "+":
-                    while (counter <= num)
-                    {
-                        if (counter % 2 == 1)
-                        {
-                            resultOfSum += counter;
-                            
-                        }
-                        counter++;
-
-                    }
-                    Console.WriteLine("Result: " + resultOfSum);
-                    break;
-
-                case "*":
-                    while (counter <= num)
-                    {
-                        if (counter % 2 == 1)
-                        {
-
-                            resultOfProduct *= counter;
-
-                        }
-                        counter++;
-
-                    }
-                    Console.WriteLine("Result: " + resultOfProduct);
-                    break;
-
-                default:
-                    Console.WriteLine("What is " +operation + " ?");
-                    break;
-            }
+            //int counter = 0;
+            //long resultOfSum = 0;
+            //long resultOfProduct = 1;
 
 
+            //switch (operation)
+            //{
+            //    case "+":
+            //        while (counter <= num)
+            //        {
+            //            if (counter % 2 == 1)
+            //            {
+            //                resultOfSum += counter;
 
-            Console.ReadKey();
+            //            }
+            //            counter++;
+
+            //        }
+            //        Console.WriteLine("Result: " + resultOfSum);
+            //        break;
+
+            //    case "*":
+            //        while (counter <= num)
+            //        {
+            //            if (counter % 2 == 1)
+            //            {
+
+            //                resultOfProduct *= counter;
+
+            //            }
+            //            counter++;
+
+            //        }
+            //        Console.WriteLine("Result: " + resultOfProduct);
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("What is " +operation + " ?");
+            //        break;
+            //}
+
+
+
+            //Console.ReadKey();
+            #endregion
+
+            #region doWhile
+
+            //int i = 0;
+
+            //do
+            //{
+            //    Console.WriteLine("I'm in !");
+
+            //} while (i != 0);
+
+            //Console.ReadKey();
+
             #endregion
         }
     }

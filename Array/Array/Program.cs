@@ -101,7 +101,7 @@ namespace Array
             #region correspondingDay
 
 
-            //string[] days = new string[] {"Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"};
+            //string[] days = new string[] { "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar" };
 
             ////foreach (var day in days)
             ////{
@@ -117,12 +117,13 @@ namespace Array
 
             //    Console.WriteLine(days[number - 1]);
 
-            //    Console.Write("\nDo you want to continue (Y/N)? ");
+            //    Console.Write("\nDo you want to continue \"y/n\" ");
             //    string ans = Convert.ToString(Console.ReadLine());
 
             //    if (ans == "Y" || ans == "y" || ans == "yes")
             //    {
             //        answer = true;
+            //        Console.Clear();
             //    }
             //    else
             //        answer = false;
@@ -134,8 +135,8 @@ namespace Array
 
             //hangi ay hangi mevsime denk gelir user ay girsin mevsim çıksın
 
-            string[] months = new string[] {"January","February","March","April","May","June",
-                "July","August","September","October","November","December"};
+            string[] months = new string[] {"january","february","march","april","may","june",
+                "july","august","september","october","november","december"};
 
             string userInputString = "";
 
@@ -152,13 +153,13 @@ namespace Array
                         Console.Write("\nNumber: ");
                         int userInput = Convert.ToInt32(Console.ReadLine());
 
-                        userInputString = months[userInput - 1];                     
+                        userInputString = months[userInput - 1];
                         break;
 
                     case 2:
                         Console.Write("\nMonth: ");
                         userInputString = Convert.ToString(Console.ReadLine());
-                        
+
                         break;
 
                     default:
@@ -200,14 +201,34 @@ namespace Array
                 if (userAnswer == "Y" || userAnswer == "y" || userAnswer == "yes")
                 {
                     answer = true;
+                    Console.Clear();
                 }
                 else
                     answer = false;
             }
-           
+
 
 
             #endregion
+
+            #region 2Darray
+
+            //int[,] exams = new int[2, 3];
+            //exams[0, 0] = 1;
+            //exams[0, 1] = 2;
+            //exams[0, 2] = 3;
+            //exams[1, 0] = 20;
+            //exams[1, 1] = 40;
+            //exams[1, 2] = 60;
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine(exams[0,i] + " - " + exams[1,i]);
+            //}
+
+            #endregion
+
+
         }
     }
 }

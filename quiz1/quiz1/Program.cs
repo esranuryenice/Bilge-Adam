@@ -92,18 +92,11 @@ namespace quiz1
                         {
                             for (int j = 0; j < 6; j++)
                             {
-                                if ((i == 1 && (j == 1 || j == 4)) || (i == 0 && j > 1) || (i == 2 && j < 4))
+                                if ((i == 1 && (j == 1 || j == 4)) || 
+                                    (i == 0 && j > 1) || (i == 2 && j < 4))
                                 {
                                     Console.Write("* ");
-                                }
-                                //else if (i == 0 && i + j > 1) 
-                                //{
-                                //    Console.Write("* ");
-                                //}
-                                //else if (i == 2 && i + j < 6) 
-                                //{
-                                //    Console.Write("* ");
-                                //}
+                                }                                
                                 else
                                     Console.Write("  ");
                             }
