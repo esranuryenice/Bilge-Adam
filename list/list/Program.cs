@@ -143,7 +143,7 @@ namespace list
 
             #endregion
 
-            #region List6
+            #region List6-find-sort
 
             //var result = numbers.Find(i => i > 5); //5ten büyük ilk değeri döner
 
