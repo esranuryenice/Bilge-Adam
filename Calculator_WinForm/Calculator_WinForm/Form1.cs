@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator_WinForm
@@ -25,15 +18,15 @@ namespace Calculator_WinForm
   
         private void ButtonClick(object sender, EventArgs e)
         {
+            Button numberButtons = sender as Button;
+            //Button numberButtons2 = (Button)sender;
 
             if (isThereAnyInput)
-            {
-                Button numberButtons = sender as Button;
+            {                
                 calculatorTextBox1.Text += numberButtons.Text;
             }
             else
-            {
-                Button numberButtons = sender as Button;
+            {                
                 calculatorTextBox1.Text = numberButtons.Text;
                 isThereAnyInput = true;
             }            
