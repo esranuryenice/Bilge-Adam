@@ -39,7 +39,7 @@ namespace Calculator_WinForm
             {
                 if (operation == "")
                 {
-                    number1 = double.Parse(calculatorTextBox1.Text);
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
                     calculatorTextBox1.Clear();
                 }
                 else
@@ -57,7 +57,7 @@ namespace Calculator_WinForm
             {
                 if (operation == "")
                 {
-                    number1 = double.Parse(calculatorTextBox1.Text);
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
                     calculatorTextBox1.Clear();
                 }
                 else
@@ -74,7 +74,7 @@ namespace Calculator_WinForm
             {
                 if (operation == "")
                 {
-                    number1 = double.Parse(calculatorTextBox1.Text);
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
                     calculatorTextBox1.Clear();
                 }
                 else
@@ -91,7 +91,7 @@ namespace Calculator_WinForm
             {
                 if (operation == "")
                 {
-                    number1 = double.Parse(calculatorTextBox1.Text);
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
                     calculatorTextBox1.Clear();
                 }
                 else

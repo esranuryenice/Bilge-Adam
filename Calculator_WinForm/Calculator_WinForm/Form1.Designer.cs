@@ -57,7 +57,7 @@
             this.buttonThree.Location = new System.Drawing.Point(97, 172);
             this.buttonThree.Name = "buttonThree";
             this.buttonThree.Size = new System.Drawing.Size(40, 33);
-            this.buttonThree.TabIndex = 0;
+            this.buttonThree.TabIndex = 1;
             this.buttonThree.Text = "3";
             this.buttonThree.UseVisualStyleBackColor = false;
             this.buttonThree.Click += new System.EventHandler(this.ButtonClick);
@@ -262,7 +262,7 @@
             this.calculatorTextBox1.Multiline = true;
             this.calculatorTextBox1.Name = "calculatorTextBox1";
             this.calculatorTextBox1.Size = new System.Drawing.Size(182, 43);
-            this.calculatorTextBox1.TabIndex = 18;
+            this.calculatorTextBox1.TabIndex = 0;
             this.calculatorTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button1
