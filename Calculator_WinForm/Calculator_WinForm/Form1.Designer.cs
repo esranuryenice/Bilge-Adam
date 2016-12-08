@@ -57,7 +57,7 @@
             this.buttonThree.Location = new System.Drawing.Point(97, 172);
             this.buttonThree.Name = "buttonThree";
             this.buttonThree.Size = new System.Drawing.Size(40, 33);
-            this.buttonThree.TabIndex = 1;
+            this.buttonThree.TabIndex = 3;
             this.buttonThree.Text = "3";
             this.buttonThree.UseVisualStyleBackColor = false;
             this.buttonThree.Click += new System.EventHandler(this.ButtonClick);
@@ -238,10 +238,11 @@
             this.buttonEquals.Location = new System.Drawing.Point(97, 211);
             this.buttonEquals.Name = "buttonEquals";
             this.buttonEquals.Size = new System.Drawing.Size(93, 33);
-            this.buttonEquals.TabIndex = 16;
+            this.buttonEquals.TabIndex = 1;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = false;
             this.buttonEquals.Click += new System.EventHandler(this.EqualButtonClick);
+            this.buttonEquals.Enter += new System.EventHandler(this.EqualButtonClick);
             // 
             // commaButton
             // 

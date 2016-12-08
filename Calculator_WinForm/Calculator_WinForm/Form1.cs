@@ -5,111 +5,106 @@ namespace Calculator_WinForm
 {
     public partial class calculator : Form
     {
-    //Enter a basınca eşittireşittir
-    //Sil e basınca bir tane sil 
-  //Numlock  Üssünü alma 
-  //Modunu alma 
- //Virgül de kontrol boşken koyamasin
- //Bug var: sonucu bulduktan sonra op a basınca tekrar kendini ekliyor.Eklemesin yeni number 1 o olsun
- //Bir tane silme ekle 
- //Şeklini güzelleştir
- //Enum kullan  
- //Bilgdeki gibi üstte minik yazdıkların çıksın       
+        //Enter a basınca eşittir olsun
+        //Sil e basınca bir tane sil 
+        //Numlock  
+        //Üssünü alma 
+        //Modunu alma 
+        //Virgül de kontrol boşken koyamasin
+        //Bug var: sonucu bulduktan sonra op a basınca tekrar kendini ekliyor.Eklemesin yeni number 1 o olsun
+        //Bir tane silme ekle 
+        //Şeklini güzelleştir
+        //Enum kullan  
+        //Bilgdeki gibi üstte minik yazdıkların çıksın
+        //+ - * / boşken basamasın
+               
         public calculator()
         {
             InitializeComponent();
         }
-                
+
         double number1;
         double number2;
-        
+
         string operation = "";
         bool isThereAnyInput = true;
-  
+
         private void ButtonClick(object sender, EventArgs e)
         {
             Button numberButtons = sender as Button;
             //Button numberButtons2 = (Button)sender;
 
             if (isThereAnyInput)
-            {                
+            {
                 calculatorTextBox1.Text += numberButtons.Text;
             }
             else
-            {                
+            {
                 calculatorTextBox1.Text = numberButtons.Text;
                 isThereAnyInput = true;
-            }            
+            }
         }
 
 
         private void AddButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text.Length != 0)
+            if (operation == "")
             {
-                if (operation == "")
-                {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                    calculatorTextBox1.Clear();
-                }
-                else
-                {
-                    calculate();
-                }
+                number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                calculatorTextBox1.Clear();
+            }
+            else
+            {
+                calculate();
             }
 
-            operation = "+";        
+
+            operation = "+";
         }
 
         private void MinusButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text.Length != 0)
+            if (operation == "")
             {
-                if (operation == "")
-                {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                    calculatorTextBox1.Clear();
-                }
-                else
-                {
-                    calculate();
-                }
+                number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                calculatorTextBox1.Clear();
             }
-            operation = "-";      
+            else
+            {
+                calculate();
+            }
+
+            operation = "-";
         }
 
         private void MultiplyButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text.Length != 0)
+            if (operation == "")
             {
-                if (operation == "")
-                {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                    calculatorTextBox1.Clear();
-                }
-                else
-                {
-                    calculate();
-                }
+                number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                calculatorTextBox1.Clear();
             }
-            operation = "*";       
+            else
+            {
+                calculate();
+            }
+
+            operation = "*";
         }
 
         private void DivisionButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text.Length != 0)
+            if (operation == "")
             {
-                if (operation == "")
-                {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                    calculatorTextBox1.Clear();
-                }
-                else
-                {
-                    calculate();
-                }
+                number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                calculatorTextBox1.Clear();
             }
-            operation = "/";    
+            else
+            {
+                calculate();
+            }
+
+            operation = "/";
         }
 
         private void EqualButtonClick(object sender, EventArgs e)
@@ -119,7 +114,7 @@ namespace Calculator_WinForm
 
         private void ClearEntryButtonClick(object sender, EventArgs e)
         {
-            calculatorTextBox1.Clear();     
+            calculatorTextBox1.Clear();
         }
 
         private void ClearButtonClick(object sender, EventArgs e)
@@ -127,18 +122,18 @@ namespace Calculator_WinForm
             calculatorTextBox1.Clear();
             number1 = 0;
             number2 = 0;
-            operation = "";       
+            operation = "";
         }
 
         private void CommaButtonClick(object sender, System.EventArgs e)
         {
-            calculatorTextBox1.Text += commaButton.Text;          
+            calculatorTextBox1.Text += commaButton.Text;
         }
 
 
         public void calculate()
         {
-            number2 = double.Parse(calculatorTextBox1.Text);
+            number2 = Convert.ToDouble(calculatorTextBox1.Text);
 
             switch (operation)
             {
