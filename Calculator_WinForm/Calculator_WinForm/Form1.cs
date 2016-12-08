@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Calculator_WinForm
 {
     public partial class calculator : Form
     {
-        //Enter a basınca eşittir olsun !!??
-        //Sil e basınca bir tane sil 
-        //Numlock  
+        //Enter a basınca eşittir olsun !!?? -> olmadı hala !!! 
+        //Numlock  -> bişiler yaptım ama olmadı hala
         //Üssünü alma 
-        //Modunu alma 
-        //Virgül de kontrol boşken koyamasin
-        //Bug var: sonucu bulduktan sonra op a basınca tekrar kendini ekliyor.Eklemesin yeni number 1 o olsun
-        //Bir tane silme ekle 
-        //Şeklini güzelleştir
+        //Modunu alma
         //Enum kullan  
-        //Bilgdeki gibi üstte minik yazdıkların çıksın
-        //+ - * / boşken basamasın
+        //, + - * = / de kontrol: boşken koyamasin -> OK
+        //Bug var: eşittirden sonra + ya(op) basınca tekrar kendini ekliyor -> OK
+        //Şeklini güzelleştir -> olmadı la
+        //icon koy -> OK
+        //backspace ekle -> OK
+        //Bilgdeki gibi üstte minik yazdıkların çıksın -> OK
 
         public calculator()
         {
@@ -32,129 +35,193 @@ namespace Calculator_WinForm
         private void ButtonClick(object sender, EventArgs e)
         {
             Button numberButtons = sender as Button;
-            //Button numberButtons2 = (Button)sender;
-
+            
             if (isThereAnyInput)
             {
                 calculatorTextBox1.Text += numberButtons.Text;
+                
             }
             else
             {
                 calculatorTextBox1.Text = numberButtons.Text;
+                
                 isThereAnyInput = true;
             }
+            label1.Focus();
         }
 
 
         private void AddButtonClick(object sender, EventArgs e)
         {
 
-            if (operation == "")
+            if (calculatorTextBox1.Text != "")
             {
-                number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                calculatorTextBox1.Clear();
+               
+                if (operation == "")
+                {
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
+
+                    calculatorTextBox1.Clear();
+
+                    showNumbersTextBox.Text += number1.ToString();                    
+                }
+                else
+                {
+                    calculate();
+                }
+
+                showNumbersTextBox.Text += " " + buttonAdd.Text + " ";
             }
-            else
-            {
-                calculate();
-            }
+
             operation = "+";
-
-
-
+            label1.Focus();
 
         }
 
         private void MinusButtonClick(object sender, EventArgs e)
         {
+            if (calculatorTextBox1.Text != "")
+            {
+                
+                if (operation == "")
+                {
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
 
-            if (operation == "")
-            {
-                number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                calculatorTextBox1.Clear();
-            }
-            else
-            {
-                calculate();
+                    calculatorTextBox1.Clear();
+
+                    showNumbersTextBox.Text = number1.ToString();                      
+                }
+                else
+                {
+                    calculate();
+                }
+
+                showNumbersTextBox.Text += " " + buttonSubstraction.Text + " ";
             }
             operation = "-";
-
-
-
+            label1.Focus();
 
         }
 
         private void MultiplyButtonClick(object sender, EventArgs e)
         {
+            if (calculatorTextBox1.Text != "")
+            {
+               
+                if (operation == "")
+                {
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                    calculatorTextBox1.Clear();
+                    showNumbersTextBox.Text = number1.ToString();
+                    
+                }
+                else
+                {
+                    calculate();
+                }
 
-            if (operation == "")
-            {
-                number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                calculatorTextBox1.Clear();
-            }
-            else
-            {
-                calculate();
+                showNumbersTextBox.Text += " " + buttonProduct.Text + " ";
             }
             operation = "*";
-
-
-
+            label1.Focus();
 
         }
 
         private void DivisionButtonClick(object sender, EventArgs e)
         {
+            if (calculatorTextBox1.Text != "")
+            {
+                
+                if (operation == "")
+                {
+                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                    calculatorTextBox1.Clear();
+                    showNumbersTextBox.Text = number1.ToString();
+                    
+                }
+                else
+                {
+                    calculate();
+                }
 
-            if (operation == "")
-            {
-                number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                calculatorTextBox1.Clear();
-            }
-            else
-            {
-                calculate();
+                showNumbersTextBox.Text += " " + buttonDivision.Text + " ";
             }
             operation = "/";
-
-
+            label1.Focus();
 
 
         }
 
         private void EqualButtonClick(object sender, EventArgs e)
         {
-            calculate();
+            
+            if (calculatorTextBox1.Text != "")
+            {
+                calculate();
+            }
+            operation = "";
+            showNumbersTextBox.Clear();
+
         }
 
         private void ClearEntryButtonClick(object sender, EventArgs e)
         {
             calculatorTextBox1.Clear();
+            label1.Focus();
+
         }
 
         private void ClearButtonClick(object sender, EventArgs e)
         {
             calculatorTextBox1.Clear();
+            showNumbersTextBox.Clear();
             number1 = 0;
             number2 = 0;
             operation = "";
+            label1.Focus();
+
+        }
+
+
+        private void backspaceButton_Click(object sender, EventArgs e)
+        {
+            char[] charArray = calculatorTextBox1.Text.ToCharArray();
+            calculatorTextBox1.Clear();
+
+            for (int i = 0; i < charArray.Length - 1; i++)
+            {                
+                calculatorTextBox1.Text += charArray[i].ToString(); 
+            }
+
+            label1.Focus();
+
+
         }
 
         private void CommaButtonClick(object sender, System.EventArgs e)
         {
-            calculatorTextBox1.Text += commaButton.Text;
+            if (calculatorTextBox1.Text != "")
+            {
+                calculatorTextBox1.Text += commaButton.Text;
+                showNumbersTextBox.Text += commaButton.Text;
+            }
+            label1.Focus();
+
+
         }
 
 
         public void calculate()
         {
             number2 = Convert.ToDouble(calculatorTextBox1.Text);
+            showNumbersTextBox.Text += number2.ToString();
 
             switch (operation)
             {
                 case "+":
-
+                    
                     number1 += number2;
+
                     break;
 
                 case "-":
@@ -184,6 +251,66 @@ namespace Calculator_WinForm
         {
 
         }
+
+        private void calculator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar.ToString())
+            {
+                case "0":
+                    buttonZero.PerformClick();
+                    break;
+                case "1":
+                    buttonOne.PerformClick();
+                    break;
+                case "2":
+                    buttonTwo.PerformClick();
+                    break;
+                case "3":
+                    buttonThree.PerformClick();
+                    break;
+                case "4":
+                    buttonFour.PerformClick();
+                    break;
+                case "5":
+                    buttonFive.PerformClick();
+                    break;
+                case "6":
+                    buttonSix.PerformClick();
+                    break;
+                case "7":
+                    buttonSeven.PerformClick();
+                    break;
+                case "8":
+                    buttonEight.PerformClick();
+                    break;
+                case "9":
+                    buttonNine.PerformClick();
+                    break;
+                case "+":
+                    buttonAdd.PerformClick();
+                    break;
+                case "-":
+                    buttonSubstraction.PerformClick();
+                    break;
+                case "*":
+                    buttonProduct.PerformClick();
+                    break;
+                case "/":
+                    buttonDivision.PerformClick();
+                    break;
+                case "=":
+                    buttonEquals.PerformClick();
+                    break;
+                case "\r":
+                    backspaceButton.PerformClick();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        
+       
     }
 }
 
@@ -196,3 +323,5 @@ namespace Calculator_WinForm
 
 //label1.Text = numberButtons.Text;
 //label1.Text = number + ikincisayi + "";
+
+//char[] characters = "this is a test".ToCharArray();
