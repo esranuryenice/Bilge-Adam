@@ -5,7 +5,7 @@ namespace Calculator_WinForm
 {
     public partial class calculator : Form
     {
-        //Enter a basınca eşittir olsun
+        //Enter a basınca eşittir olsun !!??
         //Sil e basınca bir tane sil 
         //Numlock  
         //Üssünü alma 
@@ -17,7 +17,7 @@ namespace Calculator_WinForm
         //Enum kullan  
         //Bilgdeki gibi üstte minik yazdıkların çıksın
         //+ - * / boşken basamasın
-               
+
         public calculator()
         {
             InitializeComponent();
@@ -48,6 +48,7 @@ namespace Calculator_WinForm
 
         private void AddButtonClick(object sender, EventArgs e)
         {
+
             if (operation == "")
             {
                 number1 = Convert.ToDouble(calculatorTextBox1.Text);
@@ -57,13 +58,16 @@ namespace Calculator_WinForm
             {
                 calculate();
             }
-
-
             operation = "+";
+
+
+
+
         }
 
         private void MinusButtonClick(object sender, EventArgs e)
         {
+
             if (operation == "")
             {
                 number1 = Convert.ToDouble(calculatorTextBox1.Text);
@@ -73,12 +77,16 @@ namespace Calculator_WinForm
             {
                 calculate();
             }
-
             operation = "-";
+
+
+
+
         }
 
         private void MultiplyButtonClick(object sender, EventArgs e)
         {
+
             if (operation == "")
             {
                 number1 = Convert.ToDouble(calculatorTextBox1.Text);
@@ -88,12 +96,16 @@ namespace Calculator_WinForm
             {
                 calculate();
             }
-
             operation = "*";
+
+
+
+
         }
 
         private void DivisionButtonClick(object sender, EventArgs e)
         {
+
             if (operation == "")
             {
                 number1 = Convert.ToDouble(calculatorTextBox1.Text);
@@ -103,8 +115,11 @@ namespace Calculator_WinForm
             {
                 calculate();
             }
-
             operation = "/";
+
+
+
+
         }
 
         private void EqualButtonClick(object sender, EventArgs e)

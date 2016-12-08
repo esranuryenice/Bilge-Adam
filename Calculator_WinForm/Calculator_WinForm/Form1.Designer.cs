@@ -242,7 +242,6 @@
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = false;
             this.buttonEquals.Click += new System.EventHandler(this.EqualButtonClick);
-            this.buttonEquals.Enter += new System.EventHandler(this.EqualButtonClick);
             // 
             // commaButton
             // 
