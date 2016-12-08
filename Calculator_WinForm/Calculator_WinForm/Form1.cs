@@ -5,6 +5,16 @@ namespace Calculator_WinForm
 {
     public partial class calculator : Form
     {
+    //Enter a basınca eşittireşittir
+    //Sil e basınca bir tane sil 
+  //Numlock  Üssünü alma 
+  //Modunu alma 
+ //Virgül de kontrol boşken koyamasin
+ //Bug var: sonucu bulduktan sonra op a basınca tekrar kendini ekliyor.Eklemesin yeni number 1 o olsun
+ //Bir tane silme ekle 
+ //Şeklini güzelleştir
+ //Enum kullan  
+ //Bilgdeki gibi üstte minik yazdıkların çıksın       
         public calculator()
         {
             InitializeComponent();
