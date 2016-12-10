@@ -10,16 +10,16 @@ namespace Calculator_WinForm
     public partial class calculator : Form
     {
         //Enter a basınca eşittir olsun !!?? -> olmadı hala !!! 
-        //Numlock  -> bişiler yaptım ama olmadı hala
+        //sayılara ve + - ye basınca çıksın  -> bişiler yaptım ama olmadı hala !!!
         //Üssünü alma 
         //Modunu alma
         //Enum kullan  
         //, + - * = / de kontrol: boşken koyamasin -> OK
-        //Bug var: eşittirden sonra + ya(op) basınca tekrar kendini ekliyor -> OK
-        //Şeklini güzelleştir -> olmadı la
+        //Eşittirden sonra +,- falan basınca tekrar kendini ekliyordu -> OK
+        //Şeklini güzelleştir -> OK
         //icon koy -> OK
         //backspace ekle -> OK
-        //Bilgdeki gibi üstte minik yazdıkların çıksın -> OK
+        //Bilgdeki gibi üstte minik yazdıkları çıksın -> OK
 
         public calculator()
         {
@@ -130,7 +130,7 @@ namespace Calculator_WinForm
         private void DivisionButtonClick(object sender, EventArgs e)
         {
             if (calculatorTextBox1.Text != "")
-            {
+            {                
                 
                 if (operation == "")
                 {
@@ -148,8 +148,6 @@ namespace Calculator_WinForm
             }
             operation = "/";
             label1.Focus();
-
-
         }
 
         private void EqualButtonClick(object sender, EventArgs e)
@@ -194,8 +192,6 @@ namespace Calculator_WinForm
             }
 
             label1.Focus();
-
-
         }
 
         private void CommaButtonClick(object sender, System.EventArgs e)
@@ -203,11 +199,9 @@ namespace Calculator_WinForm
             if (calculatorTextBox1.Text != "")
             {
                 calculatorTextBox1.Text += commaButton.Text;
-                showNumbersTextBox.Text += commaButton.Text;
             }
+
             label1.Focus();
-
-
         }
 
 
@@ -317,7 +311,6 @@ namespace Calculator_WinForm
 //Button ramiz = (Button)sender;
 
 //MessageBox.Show(numberButtons.Text + " e bastın.");
-
 
 //ikincisayi = Convert.ToInt32(numberButtons.Text);
 
