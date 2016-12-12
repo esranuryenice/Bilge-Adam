@@ -303,8 +303,8 @@ namespace Calculator_WinForm
             }
         }
 
-        
-       
+
+
     }
 }
 
@@ -318,3 +318,9 @@ namespace Calculator_WinForm
 //label1.Text = number + ikincisayi + "";
 
 //char[] characters = "this is a test".ToCharArray();
+
+
+
+
+
+    
