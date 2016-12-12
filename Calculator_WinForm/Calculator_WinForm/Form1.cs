@@ -20,6 +20,11 @@ namespace Calculator_WinForm
         //icon koy -> OK
         //backspace ekle -> OK
         //Bilgdeki gibi üstte minik yazdıkları çıksın -> OK
+        //TO DO:  , koyunca 0 koysun
+        //default 0 olsun
+        //human readable scientific değil olsun yani tostrign yaparken cnvert et
+        //8** yapınca 64 bulsun
+        //
 
         public calculator()
         {
