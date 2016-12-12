@@ -20,8 +20,8 @@ namespace Calculator_WinForm
         //icon koy -> OK
         //backspace ekle -> OK
         //Bilgdeki gibi üstte minik yazdıkları çıksın -> OK
-        //TO DO:  , koyunca 0 koysun
-        //default 0 olsun
+        //TO DO:  , koyunca 0 koysun -> OK
+        //default 0 olsun _> OK
         //human readable scientific değil olsun yani tostrign yaparken cnvert et
         //8** yapınca 64 bulsun
         //
@@ -40,16 +40,21 @@ namespace Calculator_WinForm
         private void ButtonClick(object sender, EventArgs e)
         {
             Button numberButtons = sender as Button;
-            
+
+            if (result.Text == "0" )
+            {
+                result.Clear();
+            }
+
             if (isThereAnyInput)
             {
-                calculatorTextBox1.Text += numberButtons.Text;
-                
+                result.Text += numberButtons.Text;
+
             }
             else
             {
-                calculatorTextBox1.Text = numberButtons.Text;
-                
+                result.Text = numberButtons.Text;
+
                 isThereAnyInput = true;
             }
             label1.Focus();
@@ -59,16 +64,16 @@ namespace Calculator_WinForm
         private void AddButtonClick(object sender, EventArgs e)
         {
 
-            if (calculatorTextBox1.Text != "")
+            if (result.Text != "")
             {
-               
+
                 if (operation == "")
                 {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                    number1 = Convert.ToDouble(result.Text);
 
-                    calculatorTextBox1.Clear();
+                    result.Clear();
 
-                    showNumbersTextBox.Text += number1.ToString();                    
+                    showNumbersTextBox.Text += number1.ToString();
                 }
                 else
                 {
@@ -85,16 +90,16 @@ namespace Calculator_WinForm
 
         private void MinusButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text != "")
+            if (result.Text != "")
             {
-                
+
                 if (operation == "")
                 {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
+                    number1 = Convert.ToDouble(result.Text);
 
-                    calculatorTextBox1.Clear();
+                    result.Clear();
 
-                    showNumbersTextBox.Text = number1.ToString();                      
+                    showNumbersTextBox.Text = number1.ToString();
                 }
                 else
                 {
@@ -110,15 +115,15 @@ namespace Calculator_WinForm
 
         private void MultiplyButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text != "")
+            if (result.Text != "")
             {
-               
+
                 if (operation == "")
                 {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                    calculatorTextBox1.Clear();
+                    number1 = Convert.ToDouble(result.Text);
+                    result.Clear();
                     showNumbersTextBox.Text = number1.ToString();
-                    
+
                 }
                 else
                 {
@@ -134,15 +139,15 @@ namespace Calculator_WinForm
 
         private void DivisionButtonClick(object sender, EventArgs e)
         {
-            if (calculatorTextBox1.Text != "")
-            {                
-                
+            if (result.Text != "")
+            {
+
                 if (operation == "")
                 {
-                    number1 = Convert.ToDouble(calculatorTextBox1.Text);
-                    calculatorTextBox1.Clear();
+                    number1 = Convert.ToDouble(result.Text);
+                    result.Clear();
                     showNumbersTextBox.Text = number1.ToString();
-                    
+
                 }
                 else
                 {
@@ -157,8 +162,8 @@ namespace Calculator_WinForm
 
         private void EqualButtonClick(object sender, EventArgs e)
         {
-            
-            if (calculatorTextBox1.Text != "")
+
+            if (result.Text != "")
             {
                 calculate();
             }
@@ -169,14 +174,16 @@ namespace Calculator_WinForm
 
         private void ClearEntryButtonClick(object sender, EventArgs e)
         {
-            calculatorTextBox1.Clear();
+            result.Text = "0";
+
             label1.Focus();
 
         }
 
         private void ClearButtonClick(object sender, EventArgs e)
         {
-            calculatorTextBox1.Clear();
+            result.Text = "0";
+
             showNumbersTextBox.Clear();
             number1 = 0;
             number2 = 0;
@@ -188,12 +195,12 @@ namespace Calculator_WinForm
 
         private void backspaceButton_Click(object sender, EventArgs e)
         {
-            char[] charArray = calculatorTextBox1.Text.ToCharArray();
-            calculatorTextBox1.Clear();
+            char[] charArray = result.Text.ToCharArray();
+            result.Clear();
 
             for (int i = 0; i < charArray.Length - 1; i++)
-            {                
-                calculatorTextBox1.Text += charArray[i].ToString(); 
+            {
+                result.Text += charArray[i].ToString();
             }
 
             label1.Focus();
@@ -201,9 +208,9 @@ namespace Calculator_WinForm
 
         private void CommaButtonClick(object sender, System.EventArgs e)
         {
-            if (calculatorTextBox1.Text != "")
+            if (result.Text != "")
             {
-                calculatorTextBox1.Text += commaButton.Text;
+                result.Text += buttonComma.Text;
             }
 
             label1.Focus();
@@ -212,13 +219,13 @@ namespace Calculator_WinForm
 
         public void calculate()
         {
-            number2 = Convert.ToDouble(calculatorTextBox1.Text);
+            number2 = Convert.ToDouble(result.Text);
             showNumbersTextBox.Text += number2.ToString();
 
             switch (operation)
             {
                 case "+":
-                    
+
                     number1 += number2;
 
                     break;
@@ -242,7 +249,7 @@ namespace Calculator_WinForm
                     break;
             }
 
-            calculatorTextBox1.Text = number1.ToString();
+            result.Text = number1.ToString();
             isThereAnyInput = false;
         }
 
@@ -298,10 +305,10 @@ namespace Calculator_WinForm
                     buttonDivision.PerformClick();
                     break;
                 case "=":
-                    buttonEquals.PerformClick();
+                    buttonEqual.PerformClick();
                     break;
-                case "\r":
-                    backspaceButton.PerformClick();
+                case ",":
+                    buttonComma.PerformClick();
                     break;
                 default:
                     break;
@@ -323,9 +330,3 @@ namespace Calculator_WinForm
 //label1.Text = number + ikincisayi + "";
 
 //char[] characters = "this is a test".ToCharArray();
-
-
-
-
-
-    

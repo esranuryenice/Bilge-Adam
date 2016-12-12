@@ -44,11 +44,11 @@
             this.buttonDivision = new System.Windows.Forms.Button();
             this.buttonZero = new System.Windows.Forms.Button();
             this.buttonClearEntry = new System.Windows.Forms.Button();
-            this.buttonEquals = new System.Windows.Forms.Button();
-            this.commaButton = new System.Windows.Forms.Button();
-            this.calculatorTextBox1 = new System.Windows.Forms.TextBox();
+            this.buttonEqual = new System.Windows.Forms.Button();
+            this.buttonComma = new System.Windows.Forms.Button();
+            this.result = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.backspaceButton = new System.Windows.Forms.Button();
+            this.buttonBackspace = new System.Windows.Forms.Button();
             this.showNumbersTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -67,7 +67,6 @@
             this.buttonThree.Text = "3";
             this.buttonThree.UseVisualStyleBackColor = false;
             this.buttonThree.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonThree.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonFive
             // 
@@ -83,7 +82,6 @@
             this.buttonFive.Text = "5";
             this.buttonFive.UseVisualStyleBackColor = false;
             this.buttonFive.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonFive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonSeven
             // 
@@ -99,7 +97,6 @@
             this.buttonSeven.Text = "7";
             this.buttonSeven.UseVisualStyleBackColor = false;
             this.buttonSeven.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonSeven.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonTwo
             // 
@@ -116,7 +113,6 @@
             this.buttonTwo.Text = "2";
             this.buttonTwo.UseVisualStyleBackColor = false;
             this.buttonTwo.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonTwo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonOne
             // 
@@ -133,7 +129,6 @@
             this.buttonOne.Text = "1";
             this.buttonOne.UseVisualStyleBackColor = false;
             this.buttonOne.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonOne.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonFour
             // 
@@ -149,7 +144,6 @@
             this.buttonFour.Text = "4";
             this.buttonFour.UseVisualStyleBackColor = false;
             this.buttonFour.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonFour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonSix
             // 
@@ -165,7 +159,6 @@
             this.buttonSix.Text = "6";
             this.buttonSix.UseVisualStyleBackColor = false;
             this.buttonSix.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonSix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonEight
             // 
@@ -181,7 +174,6 @@
             this.buttonEight.Text = "8";
             this.buttonEight.UseVisualStyleBackColor = false;
             this.buttonEight.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonEight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonNine
             // 
@@ -197,7 +189,6 @@
             this.buttonNine.Text = "9";
             this.buttonNine.UseVisualStyleBackColor = false;
             this.buttonNine.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonNine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonProduct
             // 
@@ -214,7 +205,6 @@
             this.buttonProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonProduct.UseVisualStyleBackColor = false;
             this.buttonProduct.Click += new System.EventHandler(this.MultiplyButtonClick);
-            this.buttonProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonSubstraction
             // 
@@ -230,7 +220,6 @@
             this.buttonSubstraction.Text = "-";
             this.buttonSubstraction.UseVisualStyleBackColor = false;
             this.buttonSubstraction.Click += new System.EventHandler(this.MinusButtonClick);
-            this.buttonSubstraction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonAdd
             // 
@@ -246,7 +235,6 @@
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.AddButtonClick);
-            this.buttonAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonDivision
             // 
@@ -264,7 +252,6 @@
             this.buttonDivision.Text = "/";
             this.buttonDivision.UseVisualStyleBackColor = false;
             this.buttonDivision.Click += new System.EventHandler(this.DivisionButtonClick);
-            this.buttonDivision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonZero
             // 
@@ -280,7 +267,6 @@
             this.buttonZero.Text = "0";
             this.buttonZero.UseVisualStyleBackColor = false;
             this.buttonZero.Click += new System.EventHandler(this.ButtonClick);
-            this.buttonZero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
             // 
             // buttonClearEntry
             // 
@@ -297,50 +283,49 @@
             this.buttonClearEntry.UseVisualStyleBackColor = false;
             this.buttonClearEntry.Click += new System.EventHandler(this.ClearEntryButtonClick);
             // 
-            // buttonEquals
+            // buttonEqual
             // 
-            this.buttonEquals.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonEquals.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEquals.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonEquals.Location = new System.Drawing.Point(97, 211);
-            this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(93, 33);
-            this.buttonEquals.TabIndex = 1;
-            this.buttonEquals.TabStop = false;
-            this.buttonEquals.Text = "=";
-            this.buttonEquals.UseVisualStyleBackColor = false;
-            this.buttonEquals.Click += new System.EventHandler(this.EqualButtonClick);
-            this.buttonEquals.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
+            this.buttonEqual.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonEqual.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEqual.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonEqual.Location = new System.Drawing.Point(97, 211);
+            this.buttonEqual.Name = "buttonEqual";
+            this.buttonEqual.Size = new System.Drawing.Size(93, 33);
+            this.buttonEqual.TabIndex = 1;
+            this.buttonEqual.TabStop = false;
+            this.buttonEqual.Text = "=";
+            this.buttonEqual.UseVisualStyleBackColor = false;
+            this.buttonEqual.Click += new System.EventHandler(this.EqualButtonClick);
             // 
-            // commaButton
+            // buttonComma
             // 
-            this.commaButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.commaButton.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.commaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.commaButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.commaButton.Location = new System.Drawing.Point(5, 211);
-            this.commaButton.Name = "commaButton";
-            this.commaButton.Size = new System.Drawing.Size(40, 33);
-            this.commaButton.TabIndex = 17;
-            this.commaButton.TabStop = false;
-            this.commaButton.Text = ",";
-            this.commaButton.UseVisualStyleBackColor = false;
-            this.commaButton.Click += new System.EventHandler(this.CommaButtonClick);
-            this.commaButton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
+            this.buttonComma.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonComma.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonComma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonComma.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonComma.Location = new System.Drawing.Point(5, 211);
+            this.buttonComma.Name = "buttonComma";
+            this.buttonComma.Size = new System.Drawing.Size(40, 33);
+            this.buttonComma.TabIndex = 17;
+            this.buttonComma.TabStop = false;
+            this.buttonComma.Text = ",";
+            this.buttonComma.UseVisualStyleBackColor = false;
+            this.buttonComma.Click += new System.EventHandler(this.CommaButtonClick);
             // 
-            // calculatorTextBox1
+            // result
             // 
-            this.calculatorTextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.calculatorTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.calculatorTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.calculatorTextBox1.Location = new System.Drawing.Point(5, 25);
-            this.calculatorTextBox1.Multiline = true;
-            this.calculatorTextBox1.Name = "calculatorTextBox1";
-            this.calculatorTextBox1.Size = new System.Drawing.Size(185, 24);
-            this.calculatorTextBox1.TabIndex = 0;
-            this.calculatorTextBox1.TabStop = false;
-            this.calculatorTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.result.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.result.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.result.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.result.Location = new System.Drawing.Point(5, 25);
+            this.result.Multiline = true;
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(185, 24);
+            this.result.TabIndex = 0;
+            this.result.TabStop = false;
+            this.result.Text = "0";
+            this.result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button1
             // 
@@ -357,21 +342,20 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ClearButtonClick);
             // 
-            // backspaceButton
+            // buttonBackspace
             // 
-            this.backspaceButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.backspaceButton.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.backspaceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backspaceButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.backspaceButton.Location = new System.Drawing.Point(97, 55);
-            this.backspaceButton.Name = "backspaceButton";
-            this.backspaceButton.Size = new System.Drawing.Size(40, 33);
-            this.backspaceButton.TabIndex = 20;
-            this.backspaceButton.TabStop = false;
-            this.backspaceButton.Text = "<<";
-            this.backspaceButton.UseVisualStyleBackColor = false;
-            this.backspaceButton.Click += new System.EventHandler(this.backspaceButton_Click);
-            this.backspaceButton.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.calculator_KeyPress);
+            this.buttonBackspace.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonBackspace.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackspace.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonBackspace.Location = new System.Drawing.Point(97, 55);
+            this.buttonBackspace.Name = "buttonBackspace";
+            this.buttonBackspace.Size = new System.Drawing.Size(40, 33);
+            this.buttonBackspace.TabIndex = 20;
+            this.buttonBackspace.TabStop = false;
+            this.buttonBackspace.Text = "<<";
+            this.buttonBackspace.UseVisualStyleBackColor = false;
+            this.buttonBackspace.Click += new System.EventHandler(this.backspaceButton_Click);
             // 
             // showNumbersTextBox
             // 
@@ -398,17 +382,18 @@
             // 
             // calculator
             // 
+            this.AcceptButton = this.buttonEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(197, 254);
             this.Controls.Add(this.showNumbersTextBox);
-            this.Controls.Add(this.backspaceButton);
+            this.Controls.Add(this.buttonBackspace);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.calculatorTextBox1);
-            this.Controls.Add(this.commaButton);
-            this.Controls.Add(this.buttonEquals);
+            this.Controls.Add(this.result);
+            this.Controls.Add(this.buttonComma);
+            this.Controls.Add(this.buttonEqual);
             this.Controls.Add(this.buttonClearEntry);
             this.Controls.Add(this.buttonZero);
             this.Controls.Add(this.buttonDivision);
@@ -426,6 +411,9 @@
             this.Controls.Add(this.buttonThree);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.MaximumSize = new System.Drawing.Size(213, 293);
+            this.MinimumSize = new System.Drawing.Size(213, 293);
             this.Name = "calculator";
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.calculator_Load);
@@ -453,11 +441,11 @@
         private System.Windows.Forms.Button buttonDivision;
         private System.Windows.Forms.Button buttonZero;
         private System.Windows.Forms.Button buttonClearEntry;
-        private System.Windows.Forms.Button buttonEquals;
-        private System.Windows.Forms.Button commaButton;
-        private System.Windows.Forms.TextBox calculatorTextBox1;
+        private System.Windows.Forms.Button buttonEqual;
+        private System.Windows.Forms.Button buttonComma;
+        private System.Windows.Forms.TextBox result;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button backspaceButton;
+        private System.Windows.Forms.Button buttonBackspace;
         private System.Windows.Forms.TextBox showNumbersTextBox;
         private System.Windows.Forms.Label label1;
     }
