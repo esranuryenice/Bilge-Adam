@@ -45,7 +45,7 @@
             // 
             this.Spaceship.BackColor = System.Drawing.Color.Transparent;
             this.Spaceship.Image = ((System.Drawing.Image)(resources.GetObject("Spaceship.Image")));
-            this.Spaceship.Location = new System.Drawing.Point(247, 106);
+            this.Spaceship.Location = new System.Drawing.Point(238, 106);
             this.Spaceship.Name = "Spaceship";
             this.Spaceship.Size = new System.Drawing.Size(80, 74);
             this.Spaceship.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,6 +116,9 @@
             this.Controls.Add(this.wallDown);
             this.Controls.Add(this.wallUp);
             this.Controls.Add(this.wallLeft);
+            this.DoubleBuffered = true;
+            this.MaximumSize = new System.Drawing.Size(590, 337);
+            this.MinimumSize = new System.Drawing.Size(590, 337);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

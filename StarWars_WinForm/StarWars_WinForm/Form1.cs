@@ -16,9 +16,11 @@ namespace StarWars_WinForm
         {
             InitializeComponent();
         }
-        int width, height;
 
-        int counter = 3;
+        int width, height;
+        int counter = 2;
+
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -40,7 +42,7 @@ namespace StarWars_WinForm
                     break;
                 case Keys.Space:
                     int x = Spaceship.Location.X + Spaceship.Width / 2;
-                    int y = Spaceship.Location.Y+ Spaceship.Height / 2;
+                    int y = Spaceship.Location.Y + Spaceship.Height / 2;
                     rocket.Location = new Point(x, y);
                     rocket.Visible = true;
                     timer1.Start();
@@ -48,57 +50,61 @@ namespace StarWars_WinForm
                 default:
                     break;
             }
-            
-            width = Form1.ActiveForm.Width;
-            height = Form1.ActiveForm.Height;
 
-            
-
-            if (Spaceship.Location.X > wallRight.Location.X - Spaceship.Width )
+            if (Spaceship.Location.X > wallRight.Location.X - Spaceship.Width)
             {
+                if (counter < 0)
+                {
+                    MessageBox.Show("GAME OVER!");
+                    Application.Exit();
+                }
 
-                MessageBox.Show("You have " + counter + " life. Be careful !!!");
+                MessageBox.Show("You have " + counter + " life left. Be careful !!!");
                 counter--;
-                Spaceship.Location = new Point(100, 100);
+                Spaceship.Location = new Point(238, 106);
             }
-           
+
             else if (Spaceship.Location.X < wallLeft.Location.X)
-            {             
-                MessageBox.Show("You have " + counter + " life. Be careful !!!");
-                counter--;
-                Spaceship.Location = new Point(100, 100);
-            }
-
-            
-            else if (Spaceship.Location.Y < wallUp.Location.Y )
             {
-                               
-                MessageBox.Show("You have " + counter + " life. Be careful !!!");
+                if (counter < 0)
+                {
+                    MessageBox.Show("GAME OVER!");
+                    Application.Exit();
+                }
+                MessageBox.Show("You have " + counter + " life left. Be careful !!!");
                 counter--;
-                Spaceship.Location = new Point(100, 100);
-
+                Spaceship.Location = new Point(238, 106);
             }
 
-           
-            else if (Spaceship.Location.Y > wallDown.Location.Y - Spaceship.Height )
+
+            else if (Spaceship.Location.Y < wallUp.Location.Y)
             {
-                
-                MessageBox.Show("You have " + counter + " life. Be careful !!!");
+                if (counter < 0)
+                {
+                    MessageBox.Show("GAME OVER!");
+                    Application.Exit();
+                }
+                MessageBox.Show("You have " + counter + " life left. Be careful !!!");
                 counter--;
-                Spaceship.Location = new Point(100, 100);
-               
+                Spaceship.Location = new Point(238, 106);
+
             }
 
-            if (counter == 0)
+
+            else if (Spaceship.Location.Y > wallDown.Location.Y - Spaceship.Height)
             {
-                MessageBox.Show("GAME OVER!");
-                Application.Exit();
+                if (counter < 0)
+                {
+                    MessageBox.Show("GAME OVER!");
+                    Application.Exit();
+                }
+                MessageBox.Show("You have " + counter + " life left. Be careful !!!");
+                counter--;
+                Spaceship.Location = new Point(238, 106);
+
             }
-
-
-
         }
-        
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -112,7 +118,7 @@ namespace StarWars_WinForm
             else
                 //timer1.Stop();
                 rocket.Visible = false;
-           
+
         }
     }
 }
