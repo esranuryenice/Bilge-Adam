@@ -16,61 +16,78 @@ namespace bus_WinForm
         {
             InitializeComponent();
         }
-        int size;
+
+        int counter = 1;
+
         private void busType_SelectedIndexChanged(object sender, EventArgs e)
         {
             string busTypeName = busType.SelectedItem.ToString();
 
-            if (busTypeName == "Travego")
+            if (busTypeName == "Mercedes Travego")
             {
-                size = 45;
-            }
-            else if (busTypeName == "E403")
-            {
-                size = 55;
-            }
-        }
-        int counter = 1;
-        
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 12; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {                   
-
-                    if (j != 2 && (i != 5 || j < 2) ) //ekle arka 5 koltuk
+                for (int i = 0; i < 12; i++)
+                {
+                    for (int j = 0; j < 5; j++)
                     {
-                        Button btn = new Button();
-                        btn.Width = 30;
-                        btn.Height = 30;
-                        btn.Left = btn.Width * j;
-                        btn.Top = btn.Width * i;
-                        btn.Text = counter.ToString();
-                        this.Controls.Add(btn);
-                        counter++;
+
+                        if (j != 2 && (i != 5 || j < 2) || (i == 11 && j == 2)) 
+                        {
+                            Button btn = new Button();
+                            btn.Click += new EventHandler(btn_Click);
+                            btn.Width = 30;
+                            btn.Height = 30;
+                            btn.Left = btn.Width * j + 20;
+                            btn.Top = btn.Width * i + 80;
+                            btn.Text = counter.ToString();
+                            btn.BackColor = Color.FromArgb(135, 144, 180);
+                            btn.ForeColor = Color.White;
+                            btn.FlatStyle = FlatStyle.Flat;
+
+                            this.Controls.Add(btn);
+                            counter++;
+                        }
                     }
 
-                    //else if ((i != 5 && j != 3) || (i != 5 && j != 4))
-                    //{
-                    //    Button btn = new Button();
-                    //    btn.Width = 30;
-                    //    btn.Height = 30;
-                    //    btn.Left = btn.Width * j;
-                    //    btn.Top = btn.Width * i;
-                    //    btn.Text = counter.ToString();
-                    //    this.Controls.Add(btn);
-                    //    counter++;
-                        
-                    //}
-
                 }
+            }
+            else if (busTypeName == "E403")
+            {           
 
             }
         }
+
+
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            if (((Control)sender).BackColor == Color.FromArgb(135, 144, 180)) //mavi ise yani boş ise
+            {
+
+                ((Control)sender).BackColor = Color.FromArgb(175, 163, 121); //kahverengi oldu dolu yani
+
+                form2.seatNumber = int.Parse(((Control)sender).Text);
+
+                form2.Show();
+
+            }
+
+            else if (((Control)sender).BackColor == Color.FromArgb(175, 163, 121))
+            {
+                //form 2 nin textboxunda adım yazmalı
+                MessageBox.Show("DOLU !");
+            }
+
+        }
+
     }
 
+
+
 }
+
+
 
 //this.Controls.Clear();
 //ototbüs tipine göre buton oluştur

@@ -18,6 +18,7 @@ namespace passing_WinForms
         }
 
         public string message;
+
         private void Form2_Load(object sender, EventArgs e)
         {
             label1.Text = message;

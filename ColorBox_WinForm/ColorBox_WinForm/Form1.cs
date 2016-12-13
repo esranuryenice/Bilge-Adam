@@ -32,6 +32,7 @@ namespace ColorBox_WinForm
 
                 
                 btn.Click += ButtonClick;
+
                 if (i == 9)
                 {
                     btn.Left = 0;
