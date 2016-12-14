@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//TO DO: ARka 5li için cinsiyet !!
+//bütün butonlar siliniyor !!
+
 namespace bus_WinForm
 {
     public partial class Form1 : Form
