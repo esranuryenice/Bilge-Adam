@@ -83,8 +83,7 @@ namespace bus_WinForm
 
             }
 
-        }
-        
+        }        
 
         private void btn_Click(object sender, EventArgs e)
         {
@@ -92,11 +91,11 @@ namespace bus_WinForm
 
             if (((Control)sender).BackColor == Color.FromArgb(135, 144, 180)) //mavi ise yani boş ise
             {
-
+                
                 ((Control)sender).BackColor = Color.FromArgb(175, 163, 121); //kahverengi oldu dolu yani
 
                 form2.seatNumber = int.Parse(((Control)sender).Text);
-
+                
                 form2.Show();
 
             }
@@ -106,15 +105,8 @@ namespace bus_WinForm
                 form2.seatNumber = int.Parse(((Control)sender).Text);
 
                 form2.Show();
-
             }
-
-        }
-
-
-
-
-
+        }      
     }
 }
 
