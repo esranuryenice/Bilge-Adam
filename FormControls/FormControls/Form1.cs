@@ -21,5 +21,22 @@ namespace FormControls
         {
             webBrowser1.Url = new Uri(textBox1.Text);
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            //textBoxAge.Text = DateTime.Now.ToString();
+            //textBoxAge.Text = dateTimePicker1.Value.ToString();
+
+            DateTime birthday = dateTimePicker1.Value;
+            DateTime now = DateTime.Now;
+
+            int age = now.Year - birthday.Year;
+
+            //textBoxAge.Text = ((now - birthday).TotalDays).ToString();
+
+            textBoxAge.Text = age.ToString();
+
+
+        }
     }
 }
