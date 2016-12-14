@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dice1 = new System.Windows.Forms.PictureBox();
             this.dice2 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dice1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +56,11 @@
             this.dice2.TabStop = false;
             this.dice2.Click += new System.EventHandler(this.pictureBox_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 400;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +81,7 @@
         #endregion
         private System.Windows.Forms.PictureBox dice1;
         private System.Windows.Forms.PictureBox dice2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
