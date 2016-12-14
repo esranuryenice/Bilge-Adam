@@ -77,6 +77,7 @@ namespace bus_WinForm
             {
                 //form 2 nin textboxunda adım yazmalı
                 MessageBox.Show("DOLU !");
+                //fghgfh
             }
 
         }
