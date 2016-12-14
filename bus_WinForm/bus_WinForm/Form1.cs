@@ -34,6 +34,9 @@ namespace bus_WinForm
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            //list tanımla
+            //listenin bütün elemanlarına "boş" ekle
+
             for (int i = 0; i < 12; i++)
             {
                 for (int j = 0; j < 5; j++)
@@ -51,23 +54,14 @@ namespace bus_WinForm
                         counter++;
                     }
 
-                    //else if ((i != 5 && j != 3) || (i != 5 && j != 4))
-                    //{
-                    //    Button btn = new Button();
-                    //    btn.Width = 30;
-                    //    btn.Height = 30;
-                    //    btn.Left = btn.Width * j;
-                    //    btn.Top = btn.Width * i;
-                    //    btn.Text = counter.ToString();
-                    //    this.Controls.Add(btn);
-                    //    counter++;
-                        
-                    //}
+                   
 
                 }
 
             }
         }
+
+        //click eventi ekle: listte tıklanan button un sayısını index olarak al ve ismi ekle
     }
 
 }
