@@ -17,7 +17,6 @@ namespace bus_WinForm
             InitializeComponent();
         }
 
-        public string[] chosenSeatList = new string[48];  
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -25,18 +24,20 @@ namespace bus_WinForm
         }
 
 
-        public int seatNumber;
+        public int seatNumber = 100;
+        
+        public static string[] chosenSeatList = new string[48]; //static yaptım oldu
 
         private void buttonSave_Click(object sender, EventArgs e)
-        {
-            
-          chosenSeatList[seatNumber] = textBoxNameSurname.Text;            
-          
-          this.Hide();       
+        {                        
+            chosenSeatList[seatNumber] = textBoxNameSurname.Text;
+            this.Hide();       
 
         }
 
-               
-        
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            textBoxNameSurname.Text = chosenSeatList[seatNumber];
+        }
     }
 }

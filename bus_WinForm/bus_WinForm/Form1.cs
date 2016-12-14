@@ -21,16 +21,20 @@ namespace bus_WinForm
 
         private void busType_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             string busTypeName = busType.SelectedItem.ToString();
 
             if (busTypeName == "Mercedes Travego")
             {
+                this.Controls.Clear();
+                counter = 1;
+
                 for (int i = 0; i < 12; i++)
                 {
                     for (int j = 0; j < 5; j++)
                     {
 
-                        if (j != 2 && (i != 5 || j < 2) || (i == 11 && j == 2)) 
+                        if (j != 2 && (i != 5 || j < 2) || (i == 11 && j == 2))
                         {
                             Button btn = new Button();
                             btn.Click += new EventHandler(btn_Click);
@@ -47,16 +51,40 @@ namespace bus_WinForm
                             counter++;
                         }
                     }
-
                 }
             }
             else if (busTypeName == "E403")
-            {           
+            {
+                this.Controls.Clear();
+                counter = 1;
+
+                for (int i = 0; i < 12; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if ((j != 2 && j != 3) && (i != 5 || j < 2))
+                        {
+                            Button btn = new Button();
+                            btn.Click += new EventHandler(btn_Click);
+                            btn.Width = 30;
+                            btn.Height = 30;
+                            btn.Left = btn.Width * j + 20;
+                            btn.Top = btn.Width * i + 80;
+                            btn.Text = counter.ToString();
+                            btn.BackColor = Color.FromArgb(135, 144, 180);
+                            btn.ForeColor = Color.White;
+                            btn.FlatStyle = FlatStyle.Flat;
+
+                            this.Controls.Add(btn);
+                            counter++;
+                        }
+                    }
+                }
 
             }
+
         }
-
-
+        
 
         private void btn_Click(object sender, EventArgs e)
         {
@@ -73,19 +101,21 @@ namespace bus_WinForm
 
             }
 
-            else if (((Control)sender).BackColor == Color.FromArgb(175, 163, 121))
+            else if (((Control)sender).BackColor == Color.FromArgb(175, 163, 121)) //kahve ise
             {
-                //form 2 nin textboxunda adım yazmalı
-                MessageBox.Show("DOLU !");
-                //fghgfh
+                form2.seatNumber = int.Parse(((Control)sender).Text);
+
+                form2.Show();
+
             }
 
         }
 
+
+
+
+
     }
-
-
-
 }
 
 

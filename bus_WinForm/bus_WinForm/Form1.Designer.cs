@@ -37,9 +37,9 @@
             this.busType.Items.AddRange(new object[] {
             "Mercedes Travego",
             "E403"});
-            this.busType.Location = new System.Drawing.Point(12, 40);
+            this.busType.Location = new System.Drawing.Point(20, 30);
             this.busType.Name = "busType";
-            this.busType.Size = new System.Drawing.Size(260, 21);
+            this.busType.Size = new System.Drawing.Size(150, 21);
             this.busType.TabIndex = 0;
             this.busType.SelectedIndexChanged += new System.EventHandler(this.busType_SelectedIndexChanged);
             // 
