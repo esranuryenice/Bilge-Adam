@@ -35,6 +35,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panelTravego = new System.Windows.Forms.Panel();
+            this.panelE403 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -101,20 +103,38 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Taken";
             // 
+            // panelTravego
+            // 
+            this.panelTravego.Location = new System.Drawing.Point(22, 81);
+            this.panelTravego.Name = "panelTravego";
+            this.panelTravego.Size = new System.Drawing.Size(146, 355);
+            this.panelTravego.TabIndex = 6;
+            // 
+            // panelE403
+            // 
+            this.panelE403.Location = new System.Drawing.Point(21, 81);
+            this.panelE403.Name = "panelE403";
+            this.panelE403.Size = new System.Drawing.Size(147, 355);
+            this.panelE403.TabIndex = 0;
+            this.panelE403.Paint += new System.Windows.Forms.PaintEventHandler(this.panelE403_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(191, 474);
+            this.ClientSize = new System.Drawing.Size(188, 474);
+            this.Controls.Add(this.panelE403);
+            this.Controls.Add(this.panelTravego);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.busType);
-            this.MaximumSize = new System.Drawing.Size(207, 513);
+            this.MaximumSize = new System.Drawing.Size(204, 513);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -130,6 +150,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelTravego;
+        private System.Windows.Forms.Panel panelE403;
     }
 }
 

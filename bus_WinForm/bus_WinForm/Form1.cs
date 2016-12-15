@@ -24,12 +24,13 @@ namespace bus_WinForm
 
         private void busType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            string busTypeName = busType.SelectedItem.ToString();
+            string busTypeName = busType.SelectedItem.ToString();           
 
             if (busTypeName == "Mercedes Travego")
             {
-                this.Controls.Clear();
+                #region Travego
+                panelTravego.Visible = true;
+                panelE403.Visible = false;
                 counter = 1;
 
                 for (int i = 0; i < 12; i++)
@@ -37,29 +38,35 @@ namespace bus_WinForm
                     for (int j = 0; j < 5; j++)
                     {
 
-                        if (j != 2 && (i != 5 || j < 2) || (i == 11 && j == 2))
+                        if ((j != 2 || i == 11) && (i != 5 || j < 2))
                         {
                             Button btn = new Button();
                             btn.Click += new EventHandler(btn_Click);
                             btn.Width = 30;
                             btn.Height = 30;
-                            btn.Left = btn.Width * j + 20;
-                            btn.Top = btn.Width * i + 80;
+                            btn.Left = btn.Width * j;
+                            btn.Top = btn.Width * i;
                             btn.Text = counter.ToString();
                             btn.BackColor = Color.FromArgb(135, 144, 180);
                             btn.ForeColor = Color.White;
                             btn.FlatStyle = FlatStyle.Flat;
 
-                            this.Controls.Add(btn);
+                            panelTravego.Controls.Add(btn);
                             counter++;
                         }
                     }
                 }
-            }
-            else if (busTypeName == "E403")
+                #endregion
+            }           
+
+            else
             {
-                this.Controls.Clear();
+                #region E403
+
                 counter = 1;
+
+                panelE403.Visible = true;
+                panelTravego.Visible = false;
 
                 for (int i = 0; i < 12; i++)
                 {
@@ -71,21 +78,20 @@ namespace bus_WinForm
                             btn.Click += new EventHandler(btn_Click);
                             btn.Width = 30;
                             btn.Height = 30;
-                            btn.Left = btn.Width * j + 20;
-                            btn.Top = btn.Width * i + 80;
+                            btn.Left = btn.Width * j;
+                            btn.Top = btn.Width * i;
                             btn.Text = counter.ToString();
                             btn.BackColor = Color.FromArgb(135, 144, 180);
                             btn.ForeColor = Color.White;
                             btn.FlatStyle = FlatStyle.Flat;
 
-                            this.Controls.Add(btn);
+                            panelE403.Controls.Add(btn);
                             counter++;
                         }
                     }
                 }
-
+                #endregion
             }
-
         }        
 
         private void btn_Click(object sender, EventArgs e)
@@ -109,7 +115,18 @@ namespace bus_WinForm
 
                 form2.Show();
             }
-        }      
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            panelTravego.Visible = false;
+            panelE403.Visible = false;
+        }
+
+        private void panelE403_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
