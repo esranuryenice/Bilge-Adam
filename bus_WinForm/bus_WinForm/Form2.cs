@@ -20,7 +20,9 @@ namespace bus_WinForm
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();            
+                                
+            
+            this.Hide();
         }
         
         public string gender;
@@ -39,6 +41,7 @@ namespace bus_WinForm
             gender = "Female";
         }
 
+        Form1 form1 = new Form1();
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -52,11 +55,12 @@ namespace bus_WinForm
                     if (genderArray[previous] == genderArray[seatNumber])
                     {
                         chosenSeatList[seatNumber] = textBoxNameSurname.Text;
+                        
                     }
                     else
                     {
                         MessageBox.Show("You cannot choose this seat due to your gender. Please choose another one.");
-                        ((Control)sender).BackColor = Color.FromArgb(135, 144, 180);
+                        
                     }
                 }
                 else
@@ -76,11 +80,12 @@ namespace bus_WinForm
                     if (genderArray[next] == genderArray[seatNumber])
                     {
                         chosenSeatList[seatNumber] = textBoxNameSurname.Text;
+                        
                     }
                     else
                     {
                         MessageBox.Show("You cannot choose this seat due to your gender. Please choose another one.");
-                        ((Control)sender).BackColor = Color.FromArgb(135, 144, 180);
+                        
                     }
                 }
                 else

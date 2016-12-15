@@ -34,7 +34,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelTravego = new System.Windows.Forms.Panel();
             this.panelSetra = new System.Windows.Forms.Panel();
+            this.GBoxMusteriBilgileri = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelOtobusTuru = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelKoltukNo = new System.Windows.Forms.Label();
+            this.BtnKaydet = new System.Windows.Forms.Button();
+            this.GBoxCinsiyet = new System.Windows.Forms.GroupBox();
+            this.RBKadın = new System.Windows.Forms.RadioButton();
+            this.RBErkek = new System.Windows.Forms.RadioButton();
+            this.TxtYolcuIsim = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.GBoxMusteriBilgileri.SuspendLayout();
+            this.GBoxCinsiyet.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,21 +88,140 @@
             this.panelTravego.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panelTravego.Location = new System.Drawing.Point(183, 167);
             this.panelTravego.Name = "panelTravego";
-            this.panelTravego.Size = new System.Drawing.Size(275, 426);
+            this.panelTravego.Size = new System.Drawing.Size(177, 426);
             this.panelTravego.TabIndex = 3;
             // 
             // panelSetra
             // 
             this.panelSetra.Location = new System.Drawing.Point(181, 167);
             this.panelSetra.Name = "panelSetra";
-            this.panelSetra.Size = new System.Drawing.Size(278, 423);
+            this.panelSetra.Size = new System.Drawing.Size(179, 423);
             this.panelSetra.TabIndex = 4;
+            // 
+            // GBoxMusteriBilgileri
+            // 
+            this.GBoxMusteriBilgileri.Controls.Add(this.label4);
+            this.GBoxMusteriBilgileri.Controls.Add(this.labelOtobusTuru);
+            this.GBoxMusteriBilgileri.Controls.Add(this.label3);
+            this.GBoxMusteriBilgileri.Controls.Add(this.labelKoltukNo);
+            this.GBoxMusteriBilgileri.Controls.Add(this.BtnKaydet);
+            this.GBoxMusteriBilgileri.Controls.Add(this.GBoxCinsiyet);
+            this.GBoxMusteriBilgileri.Controls.Add(this.TxtYolcuIsim);
+            this.GBoxMusteriBilgileri.Controls.Add(this.label2);
+            this.GBoxMusteriBilgileri.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GBoxMusteriBilgileri.Location = new System.Drawing.Point(394, 167);
+            this.GBoxMusteriBilgileri.Name = "GBoxMusteriBilgileri";
+            this.GBoxMusteriBilgileri.Size = new System.Drawing.Size(200, 210);
+            this.GBoxMusteriBilgileri.TabIndex = 5;
+            this.GBoxMusteriBilgileri.TabStop = false;
+            this.GBoxMusteriBilgileri.Text = "Müşteri Bilgileri";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(11, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Otobüs Türü :";
+            // 
+            // labelOtobusTuru
+            // 
+            this.labelOtobusTuru.AutoSize = true;
+            this.labelOtobusTuru.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelOtobusTuru.Location = new System.Drawing.Point(105, 152);
+            this.labelOtobusTuru.Name = "labelOtobusTuru";
+            this.labelOtobusTuru.Size = new System.Drawing.Size(12, 16);
+            this.labelOtobusTuru.TabIndex = 4;
+            this.labelOtobusTuru.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(11, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Koltuk No :";
+            // 
+            // labelKoltukNo
+            // 
+            this.labelKoltukNo.AutoSize = true;
+            this.labelKoltukNo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelKoltukNo.Location = new System.Drawing.Point(89, 126);
+            this.labelKoltukNo.Name = "labelKoltukNo";
+            this.labelKoltukNo.Size = new System.Drawing.Size(15, 16);
+            this.labelKoltukNo.TabIndex = 3;
+            this.labelKoltukNo.Text = "0";
+            // 
+            // BtnKaydet
+            // 
+            this.BtnKaydet.Location = new System.Drawing.Point(14, 175);
+            this.BtnKaydet.Name = "BtnKaydet";
+            this.BtnKaydet.Size = new System.Drawing.Size(173, 23);
+            this.BtnKaydet.TabIndex = 5;
+            this.BtnKaydet.Text = "KAYDET";
+            this.BtnKaydet.UseVisualStyleBackColor = true;
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
+            // 
+            // GBoxCinsiyet
+            // 
+            this.GBoxCinsiyet.Controls.Add(this.RBKadın);
+            this.GBoxCinsiyet.Controls.Add(this.RBErkek);
+            this.GBoxCinsiyet.Location = new System.Drawing.Point(6, 68);
+            this.GBoxCinsiyet.Name = "GBoxCinsiyet";
+            this.GBoxCinsiyet.Size = new System.Drawing.Size(188, 49);
+            this.GBoxCinsiyet.TabIndex = 2;
+            this.GBoxCinsiyet.TabStop = false;
+            this.GBoxCinsiyet.Text = "Cinsiyet";
+            // 
+            // RBKadın
+            // 
+            this.RBKadın.AutoSize = true;
+            this.RBKadın.Location = new System.Drawing.Point(119, 21);
+            this.RBKadın.Name = "RBKadın";
+            this.RBKadın.Size = new System.Drawing.Size(63, 20);
+            this.RBKadın.TabIndex = 1;
+            this.RBKadın.TabStop = true;
+            this.RBKadın.Text = "Kadın";
+            this.RBKadın.UseVisualStyleBackColor = true;
+            // 
+            // RBErkek
+            // 
+            this.RBErkek.AutoSize = true;
+            this.RBErkek.Location = new System.Drawing.Point(9, 21);
+            this.RBErkek.Name = "RBErkek";
+            this.RBErkek.Size = new System.Drawing.Size(61, 20);
+            this.RBErkek.TabIndex = 0;
+            this.RBErkek.TabStop = true;
+            this.RBErkek.Text = "Erkek";
+            this.RBErkek.UseVisualStyleBackColor = true;
+            // 
+            // TxtYolcuİsim
+            // 
+            this.TxtYolcuIsim.Location = new System.Drawing.Point(6, 39);
+            this.TxtYolcuIsim.Name = "TxtYolcuİsim";
+            this.TxtYolcuIsim.Size = new System.Drawing.Size(188, 22);
+            this.TxtYolcuIsim.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(7, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ad Soyad";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 602);
+            this.Controls.Add(this.GBoxMusteriBilgileri);
             this.Controls.Add(this.panelSetra);
             this.Controls.Add(this.panelTravego);
             this.Controls.Add(this.label1);
@@ -99,6 +231,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.GBoxMusteriBilgileri.ResumeLayout(false);
+            this.GBoxMusteriBilgileri.PerformLayout();
+            this.GBoxCinsiyet.ResumeLayout(false);
+            this.GBoxCinsiyet.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,6 +247,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelTravego;
         private System.Windows.Forms.Panel panelSetra;
+        private System.Windows.Forms.GroupBox GBoxMusteriBilgileri;
+        private System.Windows.Forms.TextBox TxtYolcuIsim;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelKoltukNo;
+        private System.Windows.Forms.GroupBox GBoxCinsiyet;
+        private System.Windows.Forms.RadioButton RBKadın;
+        private System.Windows.Forms.RadioButton RBErkek;
+        private System.Windows.Forms.Label labelOtobusTuru;
+        private System.Windows.Forms.Button BtnKaydet;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 

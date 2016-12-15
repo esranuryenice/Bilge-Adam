@@ -19,7 +19,7 @@ namespace Bus_Ders_Form
 
         private void CBoxOtobusTuru_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             if (CBoxOtobusTuru.SelectedItem.ToString() == "Travego")
             {
                 #region KoltukarTravego
@@ -35,6 +35,7 @@ namespace Bus_Ders_Form
                         if ((j != 2 || i == 11) && (i != 5 || j < 2))
                         {
                             Button btn = new Button();
+                            btn.Click += Button_Click;
                             btn.Width = 30;
                             btn.Height = 30;
                             btn.Text = counter.ToString();
@@ -56,7 +57,7 @@ namespace Bus_Ders_Form
                 #region KoltukarSetra
 
                 panelSetra.Visible = true;
-                panelTravego.Visible = false;                
+                panelTravego.Visible = false;
 
                 int counter = 1;
                 for (int i = 0; i < 14; i++)
@@ -66,6 +67,7 @@ namespace Bus_Ders_Form
                         if ((j != 2 || i == 13) && (i != 7 || j < 2))
                         {
                             Button btn = new Button();
+                            btn.Click += Button_Click;
                             btn.Width = 30;
                             btn.Height = 30;
                             btn.Text = counter.ToString();
@@ -83,10 +85,86 @@ namespace Bus_Ders_Form
             }
         }
 
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button secilenKoltuk = sender as Button;
+            labelKoltukNo.Text = secilenKoltuk.Text;
+            labelOtobusTuru.Text = CBoxOtobusTuru.SelectedItem.ToString();
+
+            if (labelOtobusTuru.Text == "Travego")
+            {
+                string yolcu = travegoYolcularIsim[int.Parse(secilenKoltuk.Text) - 1];
+                if ( yolcu != "")
+                {
+                    TxtYolcuIsim.Text = yolcu;
+
+                    string cinsiyet = travegoYolcularCinsiyet[int.Parse(secilenKoltuk.Text) - 1];
+
+                    if (cinsiyet == "Erkek")
+                    {
+                        RBErkek.Checked = true;
+                        secilenKoltuk.BackColor = Color.Blue;
+                    }
+                    else
+                    {
+                        RBKadın.Checked = false;
+                        secilenKoltuk.BackColor = Color.Pink;
+                    }
+                }
+            }
+            else
+            {
+
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             panelTravego.Visible = false;
             panelSetra.Visible = false;
+        }
+        string[] travegoYolcularIsim = new string[60];
+        string[] setraYolcularIsim = new string[60];
+        string[] travegoYolcularCinsiyet = new string[60];
+        string[] setraYolcularCinsiyet = new string[60];
+        
+
+        private void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            
+            if (labelOtobusTuru.Text == "Travego")
+            {
+                string cinsiyet;
+                travegoYolcularIsim[int.Parse(labelKoltukNo.Text) - 1] = TxtYolcuIsim.Text;
+
+                if (RBErkek.Checked)
+                {
+                    cinsiyet = "Erkek";
+                }
+                else
+                {
+                    cinsiyet = "Kadın";
+                }
+                travegoYolcularCinsiyet[int.Parse(labelKoltukNo.Text) - 1] = cinsiyet;
+            }
+            else
+            {
+                setraYolcularIsim[int.Parse(labelKoltukNo.Text) - 1] = TxtYolcuIsim.Text;
+
+                if (RBErkek.Checked)
+                {
+                    cinsiyet = "Erkek";
+                }
+                else
+                {
+                    cinsiyet = "Kadın";
+                }
+                setraYolcularCinsiyet[int.Parse(labelKoltukNo.Text) - 1] = cinsiyet;
+            }
+
+            TxtYolcuIsim.Text = string.Empty;
+            labelKoltukNo.Text = "0";
+            labelOtobusTuru.Text = "-";
         }
     }
 }
