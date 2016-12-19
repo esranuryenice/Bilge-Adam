@@ -41,7 +41,7 @@
             this.labelKoltukNo = new System.Windows.Forms.Label();
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.GBoxCinsiyet = new System.Windows.Forms.GroupBox();
-            this.RBKadın = new System.Windows.Forms.RadioButton();
+            this.RBKadin = new System.Windows.Forms.RadioButton();
             this.RBErkek = new System.Windows.Forms.RadioButton();
             this.TxtYolcuIsim = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -168,7 +168,7 @@
             // 
             // GBoxCinsiyet
             // 
-            this.GBoxCinsiyet.Controls.Add(this.RBKadın);
+            this.GBoxCinsiyet.Controls.Add(this.RBKadin);
             this.GBoxCinsiyet.Controls.Add(this.RBErkek);
             this.GBoxCinsiyet.Location = new System.Drawing.Point(6, 68);
             this.GBoxCinsiyet.Name = "GBoxCinsiyet";
@@ -179,14 +179,14 @@
             // 
             // RBKadın
             // 
-            this.RBKadın.AutoSize = true;
-            this.RBKadın.Location = new System.Drawing.Point(119, 21);
-            this.RBKadın.Name = "RBKadın";
-            this.RBKadın.Size = new System.Drawing.Size(63, 20);
-            this.RBKadın.TabIndex = 1;
-            this.RBKadın.TabStop = true;
-            this.RBKadın.Text = "Kadın";
-            this.RBKadın.UseVisualStyleBackColor = true;
+            this.RBKadin.AutoSize = true;
+            this.RBKadin.Location = new System.Drawing.Point(119, 21);
+            this.RBKadin.Name = "RBKadın";
+            this.RBKadin.Size = new System.Drawing.Size(63, 20);
+            this.RBKadin.TabIndex = 1;
+            this.RBKadin.TabStop = true;
+            this.RBKadin.Text = "Kadın";
+            this.RBKadin.UseVisualStyleBackColor = true;
             // 
             // RBErkek
             // 
@@ -252,7 +252,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelKoltukNo;
         private System.Windows.Forms.GroupBox GBoxCinsiyet;
-        private System.Windows.Forms.RadioButton RBKadın;
+        private System.Windows.Forms.RadioButton RBKadin;
         private System.Windows.Forms.RadioButton RBErkek;
         private System.Windows.Forms.Label labelOtobusTuru;
         private System.Windows.Forms.Button BtnKaydet;

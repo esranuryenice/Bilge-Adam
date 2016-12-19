@@ -91,10 +91,11 @@ namespace Bus_Ders_Form
             labelKoltukNo.Text = secilenKoltuk.Text;
             labelOtobusTuru.Text = CBoxOtobusTuru.SelectedItem.ToString();
 
+            #region KayıtlıYolcuVarsaBilgileriniGetirme
             if (labelOtobusTuru.Text == "Travego")
             {
                 string yolcu = travegoYolcularIsim[int.Parse(secilenKoltuk.Text) - 1];
-                if ( yolcu != "")
+                if (yolcu != "")
                 {
                     TxtYolcuIsim.Text = yolcu;
 
@@ -105,17 +106,34 @@ namespace Bus_Ders_Form
                         RBErkek.Checked = true;
                         secilenKoltuk.BackColor = Color.Blue;
                     }
-                    else
+                    else if (cinsiyet == "Kadın")
                     {
-                        RBKadın.Checked = false;
+                        RBKadin.Checked = false;
                         secilenKoltuk.BackColor = Color.Pink;
                     }
                 }
             }
             else
             {
+                string yolcu = setraYolcularIsim[int.Parse(secilenKoltuk.Text) - 1];
+                if (yolcu != "")
+                {
+                    TxtYolcuIsim.Text = yolcu;
 
+                    string cinsiyet = setraYolcularCinsiyet[int.Parse(secilenKoltuk.Text) - 1];
+
+                    if (cinsiyet == "Erkek")
+                    {
+                        RBErkek.Checked = true;
+                    }
+                    else
+                    {
+                        RBKadin.Checked = true;
+                    }
+                }
             }
+            #endregion
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -123,6 +141,7 @@ namespace Bus_Ders_Form
             panelTravego.Visible = false;
             panelSetra.Visible = false;
         }
+
         string[] travegoYolcularIsim = new string[60];
         string[] setraYolcularIsim = new string[60];
         string[] travegoYolcularCinsiyet = new string[60];
@@ -131,7 +150,8 @@ namespace Bus_Ders_Form
 
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            
+            #region YolcuKayıt
+
             if (labelOtobusTuru.Text == "Travego")
             {
                 string cinsiyet;
@@ -150,6 +170,7 @@ namespace Bus_Ders_Form
             else
             {
                 setraYolcularIsim[int.Parse(labelKoltukNo.Text) - 1] = TxtYolcuIsim.Text;
+                string cinsiyet;
 
                 if (RBErkek.Checked)
                 {
@@ -166,5 +187,8 @@ namespace Bus_Ders_Form
             labelKoltukNo.Text = "0";
             labelOtobusTuru.Text = "-";
         }
+
+        #endregion
+
     }
 }
