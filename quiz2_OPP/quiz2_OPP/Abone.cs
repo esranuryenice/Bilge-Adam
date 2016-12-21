@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace quiz2_OPP
 {
-    class Abone
+    public class Abone
     {
         public string adSoyad;
         public bool aboneTipi;

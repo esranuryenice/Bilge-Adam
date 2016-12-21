@@ -130,6 +130,7 @@
             this.listBoxOdenen.Name = "listBoxOdenen";
             this.listBoxOdenen.Size = new System.Drawing.Size(189, 148);
             this.listBoxOdenen.TabIndex = 5;
+            this.listBoxOdenen.DoubleClick += new System.EventHandler(this.listBoxOdenen_DoubleClick);
             // 
             // label2
             // 
