@@ -17,30 +17,17 @@ namespace quiz2_OPP
             InitializeComponent();
         }
 
-        List<Abone> aboneList = new List<Abone>();
-        Abone abone = new Abone();
+        
         private void buttonEkle_Click(object sender, EventArgs e)
         {
-
+            Abone abone = new Abone();
             abone.adSoyad = textBoxAdSoyad.Text;
-            abone.aboneTipi = radioButtonEv.Checked == false ? true : false;
+            abone.aboneTipi = radioButtonEv.Checked == false ? true : false; //abone.aboneTipi = radioButtonEv.Checked == true ? "Ev" : "Kurum"; (string aboneTipi)
             abone.oncekiIndex = int.Parse(textBoxOnceki.Text);
             abone.sonrakiIndex = int.Parse(textBoxSonraki.Text);
 
-            aboneList.Add(abone);
-            
-            
-            if (abone.aboneTipi == false)
-            {
-                abone.ucret = 0.3 * (abone.sonrakiIndex - abone.oncekiIndex);
-            }
-            else if(abone.aboneTipi == true)
-            {
-                abone.ucret = 0.5 * (abone.sonrakiIndex - abone.oncekiIndex);
-            }
-
-            listBoxOdeme.Items.Add(abone.adSoyad + " " + abone.ucret);
-
+            listBoxOdeme.Items.Add(abone);           
+                       
             textBoxAdSoyad.Clear();
             textBoxAdSoyad.Focus();
             textBoxOnceki.Clear();
@@ -48,9 +35,11 @@ namespace quiz2_OPP
         }
 
         private void listBoxOdeme_DoubleClick(object sender, EventArgs e)
-        {          
-            
-            DialogResult result = MessageBox.Show("Ödeme yapacak mısınız?", "Onay Ekranı", MessageBoxButtons.OKCancel);
+        {
+            Abone abone = (Abone)listBoxOdeme.SelectedItem;
+            double odeme = abone.OdemeHesapla(abone.oncekiIndex, abone.sonrakiIndex, abone.aboneTipi);
+
+            DialogResult result = MessageBox.Show("Borcunuz: " + odeme + "\nÖdeme yapacak mısınız?", "Onay Ekranı", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
             {

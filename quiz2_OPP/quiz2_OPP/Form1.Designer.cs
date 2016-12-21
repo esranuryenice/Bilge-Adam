@@ -57,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(67, 7);
+            this.label1.Location = new System.Drawing.Point(62, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 1;
@@ -153,43 +153,43 @@
             // 
             // textBoxSonraki
             // 
-            this.textBoxSonraki.Location = new System.Drawing.Point(129, 168);
+            this.textBoxSonraki.Location = new System.Drawing.Point(166, 168);
             this.textBoxSonraki.Name = "textBoxSonraki";
-            this.textBoxSonraki.Size = new System.Drawing.Size(135, 20);
+            this.textBoxSonraki.Size = new System.Drawing.Size(165, 20);
             this.textBoxSonraki.TabIndex = 8;
             // 
             // textBoxOnceki
             // 
-            this.textBoxOnceki.Location = new System.Drawing.Point(129, 131);
+            this.textBoxOnceki.Location = new System.Drawing.Point(166, 131);
             this.textBoxOnceki.Name = "textBoxOnceki";
-            this.textBoxOnceki.Size = new System.Drawing.Size(135, 20);
+            this.textBoxOnceki.Size = new System.Drawing.Size(165, 20);
             this.textBoxOnceki.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(56, 132);
+            this.label4.Location = new System.Drawing.Point(62, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.Size = new System.Drawing.Size(90, 16);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Önceki";
+            this.label4.Text = "Önceki Sayaç";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(56, 172);
+            this.label5.Location = new System.Drawing.Point(62, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 16);
+            this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Sonraki";
+            this.label5.Text = "Sonraki Sayaç";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 445);
+            this.ClientSize = new System.Drawing.Size(397, 413);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxOnceki);

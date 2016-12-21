@@ -12,12 +12,26 @@ namespace quiz2_OPP
         public bool aboneTipi;
         public int oncekiIndex;
         public int sonrakiIndex;
-        public double ucret;
+      
+
+        public double OdemeHesapla(double onceki, double sonraki, bool aboneTuru)
+        {
+            double result = 0;
+
+            if (aboneTipi == false)
+            {
+                result = (sonraki - onceki) * 0.3;
+            }
+            else
+            {
+                result = (sonraki - onceki) * 0.5;
+            }
+            return result;
+        }
 
         public override string ToString()
-        {
-           
-            return this.adSoyad + this.ucret;
+        {           
+            return this.adSoyad;
         }
         
                    

@@ -34,6 +34,7 @@ namespace Bus_2_OOP
 
         private void listBoxCustomers_DoubleClick(object sender, EventArgs e)
         {
+            
             listBoxCustomers.Items.RemoveAt(listBoxCustomers.SelectedIndex);
         }
     }
