@@ -14,11 +14,11 @@ namespace quiz2_OPP
         public int sonrakiIndex;
       
 
-        public double OdemeHesapla(double onceki, double sonraki, bool aboneTuru)
+        public double OdemeHesapla(double onceki, double sonraki, string aboneTuru)
         {
             double result = 0;
 
-            if (aboneTipi == false)
+            if (aboneTuru == "Ev")
             {
                 result = (sonraki - onceki) * 0.3;
             }
@@ -30,7 +30,7 @@ namespace quiz2_OPP
         }
 
         public override string ToString()
-        {           
+        {
             return this.adSoyad;
         }
         

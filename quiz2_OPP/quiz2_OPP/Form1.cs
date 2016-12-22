@@ -12,59 +12,42 @@ namespace quiz2_OPP
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(Abone aboneForm1)
         {
             InitializeComponent();
+            textBoxIsimSoyisim.Text = aboneForm1.adSoyad;
+            textBoxAboneTipi.Text = aboneForm1.aboneTipi == false ? "Ev" : "Kurum";
+            textBoxOncekiSayac.Text = aboneForm1.oncekiIndex.ToString();
+            textBoxSonrakiSayac.Text = aboneForm1.sonrakiIndex.ToString();
+            textBoxGuncelBorc.Text = aboneForm1.OdemeHesapla(aboneForm1.oncekiIndex, aboneForm1.sonrakiIndex, textBoxAboneTipi.Text).ToString();
         }
+        Abone abone = new Abone();
 
-        
-        private void buttonEkle_Click(object sender, EventArgs e)
+       
+
+        public double guncelBorc;
+        private void button1_Click(object sender, EventArgs e)
         {
-            
-            
             Abone abone = new Abone();
 
-            abone.adSoyad = textBoxAdSoyad.Text;
-            abone.aboneTipi = radioButtonEv.Checked == false ? true : false; //abone.aboneTipi = radioButtonEv.Checked == true ? "Ev" : "Kurum"; (string aboneTipi)
-            abone.oncekiIndex = int.Parse(textBoxOnceki.Text);
-            abone.sonrakiIndex = int.Parse(textBoxSonraki.Text);
-
-            listBoxOdeme.Items.Add(abone);            
-
-            textBoxAdSoyad.Clear();
-            textBoxAdSoyad.Focus();
-            textBoxOnceki.Clear();
-            textBoxSonraki.Clear();
-        }
-
-        
-
-        private void listBoxOdeme_DoubleClick(object sender, EventArgs e)
-        {
-            Abone abone = (Abone)listBoxOdeme.SelectedItem;
-            double odeme = abone.OdemeHesapla(abone.oncekiIndex, abone.sonrakiIndex, abone.aboneTipi);
-
+            abone.adSoyad = textBoxIsimSoyisim.Text;
+            abone.aboneTipi = textBoxAboneTipi.Text == "Ev" ? false : true;
            
+
+            double odeme = abone.OdemeHesapla(double.Parse(textBoxOncekiSayac.Text), double.Parse(textBoxSonrakiSayac.Text), textBoxAboneTipi.Text);
+
+            guncelBorc = odeme;
 
             DialogResult result = MessageBox.Show("Borcunuz: " + odeme + "\nÖdeme yapacak mısınız?", "Onay Ekranı", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK)
             {
-                listBoxOdenen.Items.Add(abone);                
-                listBoxOdeme.Items.Remove(abone);
+                guncelBorc -= odeme;
+                textBoxGuncelBorc.Text = guncelBorc.ToString();
+
+                FormKayıt formKayıt = new FormKayıt();
+                formKayıt.listBoxOdenen.Items.Add(abone);
             }
-        }
-        
-        private void listBoxOdenen_DoubleClick(object sender, EventArgs e)
-        {           
-
-            Abone abone = (Abone)listBoxOdenen.SelectedItem;
-
-            Form2 form2 = new Form2(abone);   
-                     
-            form2.Show();
-
-
         }
     }
 }

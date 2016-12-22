@@ -15,11 +15,15 @@ namespace quiz2_OPP
         public Form2(Abone aboneForm2)
         {
             InitializeComponent();
-            textBox1.Text = aboneForm2.adSoyad;
-            textBox2.Text = aboneForm2.OdemeHesapla(aboneForm2.oncekiIndex, aboneForm2.sonrakiIndex, aboneForm2.aboneTipi).ToString();
+            textBoxAdSoyad.Text = aboneForm2.adSoyad;
+            //textBoxOdeme.Text =
+
+                //aboneForm2.OdemeHesapla(aboneForm2.oncekiIndex, aboneForm2.sonrakiIndex, aboneForm2.aboneTipi).ToString();
+
+
         }
 
-       
+
 
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace quiz2_OPP
+namespace Constructor
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace quiz2_OPP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormKayıt());
+            Application.Run(new Form1());
         }
     }
 }
