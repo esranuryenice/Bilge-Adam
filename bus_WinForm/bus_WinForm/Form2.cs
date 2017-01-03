@@ -15,21 +15,22 @@ namespace bus_WinForm
         public Form2()
         {
             InitializeComponent();
+            
         }
 
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-                                
-            
+
+
             this.Hide();
         }
         
         public string gender;
         public int seatNumber = 100;
-        
-        public static string[] chosenSeatList = new string[48]; //static yaptım oldu
-        public static string[] genderArray = new string[48];
+        public string busName;
+        public static string[] travegoChosenSeat = new string[48]; //static yaptım oldu
+        public static string[] travegoGender = new string[48];
 
         private void radioButtonMale_CheckedChanged(object sender, EventArgs e)
         {
@@ -42,74 +43,79 @@ namespace bus_WinForm
         }
 
         Form1 form1 = new Form1();
-
+        
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (seatNumber % 2 == 0) //çift
-            {
-                int previous = seatNumber - 1;
-                if (chosenSeatList[previous] != null)
+            //burda kaldın !!! otobüs tipine göre kayıt al !!!
+            //if ( form1.labelBusTypeName.Text == "Mercedes Travego")
+            //{
+                if (seatNumber % 2 == 0) //çift
                 {
-                    genderArray[seatNumber] = gender;
-
-                    if (genderArray[previous] == genderArray[seatNumber])
+                    int previous = seatNumber - 1;
+                    if (travegoChosenSeat[previous] != null)
                     {
-                        chosenSeatList[seatNumber] = textBoxNameSurname.Text;
-                        
+                        travegoGender[seatNumber] = gender;
+
+                        if (travegoGender[previous] == travegoGender[seatNumber])
+                        {
+                            travegoChosenSeat[seatNumber] = textBoxNameSurname.Text;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("You cannot choose this seat due to your gender. Please choose another one.");
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("You cannot choose this seat due to your gender. Please choose another one.");
-                        
+                        travegoChosenSeat[seatNumber] = textBoxNameSurname.Text;
+                        travegoGender[seatNumber] = gender;
+
                     }
                 }
-                else
+                else //tek 
                 {
-                    chosenSeatList[seatNumber] = textBoxNameSurname.Text;
-                    genderArray[seatNumber] = gender;
-
-                }
-            }
-            else //tek 
-            {
-                int next = seatNumber + 1;
-                if (chosenSeatList[next] != null)
-                {
-                    genderArray[seatNumber] = gender;
-
-                    if (genderArray[next] == genderArray[seatNumber])
+                    int next = seatNumber + 1;
+                    if (travegoChosenSeat[next] != null)
                     {
-                        chosenSeatList[seatNumber] = textBoxNameSurname.Text;
-                        
+                        travegoGender[seatNumber] = gender;
+
+                        if (travegoGender[next] == travegoGender[seatNumber])
+                        {
+                            travegoChosenSeat[seatNumber] = textBoxNameSurname.Text;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("You cannot choose this seat due to your gender. Please choose another one.");
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("You cannot choose this seat due to your gender. Please choose another one.");
-                        
+                        travegoChosenSeat[seatNumber] = textBoxNameSurname.Text;
+                        travegoGender[seatNumber] = gender;
+
                     }
                 }
-                else
-                {
-                    chosenSeatList[seatNumber] = textBoxNameSurname.Text;
-                    genderArray[seatNumber] = gender;
-
-                }
-            }
-            this.Hide();       
+        //    }
+            
+            this.Hide();
 
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            if (chosenSeatList[seatNumber] != null)
+            if (travegoChosenSeat[seatNumber] != null)
             {
-                textBoxNameSurname.Text = chosenSeatList[seatNumber] + "  -> This seat is taken.";
+                textBoxNameSurname.Text = travegoChosenSeat[seatNumber] + "  -> This seat is taken.";
 
             }
         }
 
-        
 
-        
+
+
     }
 }

@@ -6,26 +6,17 @@ using System.Threading.Tasks;
 
 namespace IZSU_RSS
 {
-    class Water
+    public class Dam
     {
-        public DateTime date { get; set; }
-
         public string title { get; set; }
-
         public string description { get; set; }
-
-
-
-        public Water(string title, string description)
-        {
-            this.title = title;
-            this.description = description;
-            
-        }
+        public DateTime date { get; set; }
 
         public override string ToString()
         {
-            return this.title;
+            return title;
         }
+
+
     }
 }

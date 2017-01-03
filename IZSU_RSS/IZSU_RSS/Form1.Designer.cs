@@ -80,7 +80,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(15, 253);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1252, 370);
+            this.webBrowser1.Size = new System.Drawing.Size(1252, 553);
             this.webBrowser1.TabIndex = 4;
             // 
             // label2
@@ -97,9 +97,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(871, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Water";
+            this.label3.Text = "Water Cuts";
             // 
             // listBox3
             // 
@@ -115,15 +115,15 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Doluluk";
+            this.label4.Text = "Water Levels";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1319, 635);
+            this.ClientSize = new System.Drawing.Size(1286, 818);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listBox3);

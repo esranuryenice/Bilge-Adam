@@ -19,48 +19,47 @@ namespace IZSU_RSS
         }
 
         XmlDocument xmlDoc = new XmlDocument();
-        XmlDocument xmlDocNews = new XmlDocument();
-        XmlDocument xmlDocWater = new XmlDocument();
-
+       
         XmlNodeList linkListNews;
 
         private void buttonComeToMeBaby_Click(object sender, EventArgs e)
         {
-            #region DolulukOranı
+            #region Dam_Water_Level
 
             xmlDoc.Load("http://www.izsu.gov.tr/Pages/rss.aspx?rssId=3");
 
-            XmlNodeList titleList = xmlDoc.SelectNodes("//channel/item/title");
-            XmlNodeList descriptionList = xmlDoc.SelectNodes("//channel/item/description");
-            XmlNodeList dateList = xmlDoc.SelectNodes("//channel/item/pubDate");
+            XmlNodeList damTitleList = xmlDoc.SelectNodes("//channel/item/title");
+            XmlNodeList damDescriptionList = xmlDoc.SelectNodes("//channel/item/description");
+            XmlNodeList damDateList = xmlDoc.SelectNodes("//channel/item/pubDate");
 
-            Baraj.date = Convert.ToDateTime(dateList[0].InnerText);
+            label1.Show();
+            label1.Text = "Tarih: " + Convert.ToDateTime(damDateList[0].InnerText).ToString("dd/MM/yyyy");
 
-            label1.Text = "Tarih: " + Baraj.date.ToString("dd/MM/yyyy");
-
-            for (int i = 0; i < titleList.Count; i++)
+            for (int i = 0; i < damTitleList.Count; i++)
             {
-                Baraj b = new Baraj(titleList[i].InnerText, descriptionList[i].InnerText);
+                DamWaterRatio _dam = new DamWaterRatio(damTitleList[i].InnerText, damDescriptionList[i].InnerText);
+                //_dam.date = Convert.ToDateTime(damDateList[i].InnerText);
 
-                listBox1.Items.Add(b);
+                listBox1.Items.Add(_dam);
 
             }
 
             #endregion
 
 
-            #region Haberler
+            #region News
 
-            xmlDocNews.Load("http://www.izsu.gov.tr/Pages/rss.aspx?rssId=1");
-            XmlNodeList titleListNews = xmlDocNews.SelectNodes("//channel/item/title");
-            //XmlNodeList descriptionListNews = xmlDocNews.SelectNodes("//channel/item/description");
+            xmlDoc.Load("http://www.izsu.gov.tr/Pages/rss.aspx?rssId=1");
+
+            XmlNodeList titleListNews = xmlDoc.SelectNodes("//channel/item/title");
             XmlNodeList dateListNews = xmlDoc.SelectNodes("//channel/item/pubDate");
-            linkListNews = xmlDocNews.SelectNodes("//channel/item/link");
+            linkListNews = xmlDoc.SelectNodes("//channel/item/link");
 
 
             for (int i = 0; i < titleListNews.Count; i++)
             {
-                News n = new News(titleListNews[i].InnerText);
+                News n = new News(titleListNews[i].InnerText, linkListNews[i].InnerText);
+                n.date = Convert.ToDateTime(dateListNews[i].InnerText);
 
                 listBox2.Items.Add(n);
 
@@ -69,18 +68,19 @@ namespace IZSU_RSS
             #endregion
 
 
-            #region SuKesintisi
+            #region Water_Cuts
 
-            xmlDocWater.Load("http://www.izsu.gov.tr/Pages/rss.aspx?rssId=2");
-            XmlNodeList titleListWater = xmlDocNews.SelectNodes("//channel/item/title");
-            XmlNodeList descriptionListWater = xmlDocNews.SelectNodes("//channel/item/description");
+            xmlDoc.Load("http://www.izsu.gov.tr/Pages/rss.aspx?rssId=2");
+
+            XmlNodeList titleListWater = xmlDoc.SelectNodes("//channel/item/title");
+            XmlNodeList descriptionListWater = xmlDoc.SelectNodes("//channel/item/description");
             XmlNodeList dateListWater = xmlDoc.SelectNodes("//channel/item/pubDate");
 
             for (int i = 0; i < titleListWater.Count; i++)
             {
-                Water w = new Water(titleListWater[i].InnerText, descriptionListWater[i].InnerText);
+                WaterCut w = new WaterCut(titleListWater[i].InnerText, descriptionListWater[i].InnerText);
                 w.date = Convert.ToDateTime(dateListWater[i].InnerText);
-
+               
                 listBox3.Items.Add(w);
             }
 
@@ -92,23 +92,30 @@ namespace IZSU_RSS
         {                      
 
             webBrowser1.Visible = true;
-                       
-            webBrowser1.Url = new Uri("http://www.izsu.gov.tr/" + linkListNews[listBox2.SelectedIndex].InnerText.ToString());
 
+            News n = (News)listBox2.SelectedItem;
+                       
+            webBrowser1.Navigate("http://www.izsu.gov.tr/" + n.link);
+
+
+        }
+       
+        private void listBox3_DoubleClick(object sender, EventArgs e)
+        {
+
+            webBrowser1.Visible = true;
+
+            WaterCut w = (WaterCut)listBox3.SelectedItem;
+
+            webBrowser1.DocumentText = w.description;
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             webBrowser1.Visible = false;
+            label1.Hide();
         }
 
-        private void listBox3_DoubleClick(object sender, EventArgs e)
-        {
-            webBrowser1.Visible = true;
-
-
-
-        }
     }
 }

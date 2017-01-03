@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//TO DO: ARka 5li için cinsiyet !!
-//bütün butonlar siliniyor !!
+//TO DO: Arka 5li için cinsiyet !!
 
 namespace bus_WinForm
 {
@@ -18,13 +17,15 @@ namespace bus_WinForm
         public Form1()
         {
             InitializeComponent();
+            
         }
-
+        
         int counter = 1;
-
         private void busType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string busTypeName = busType.SelectedItem.ToString();           
+            
+            string busTypeName = busType.SelectedItem.ToString();
+            labelBusTypeName.Text = busType.SelectedItem.ToString();
 
             if (busTypeName == "Mercedes Travego")
             {
@@ -32,7 +33,7 @@ namespace bus_WinForm
                 panelTravego.Visible = true;
                 panelE403.Visible = false;
                 counter = 1;
-
+                
                 for (int i = 0; i < 12; i++)
                 {
                     for (int j = 0; j < 5; j++)
@@ -57,7 +58,7 @@ namespace bus_WinForm
                     }
                 }
                 #endregion
-            }           
+            }
 
             else
             {
@@ -92,19 +93,19 @@ namespace bus_WinForm
                 }
                 #endregion
             }
-        }        
+        }
 
         private void btn_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
 
+            Form2 form2 = new Form2();
             if (((Control)sender).BackColor == Color.FromArgb(135, 144, 180)) //mavi ise yani boş ise
             {
 
                 ((Control)sender).BackColor = Color.FromArgb(175, 163, 121); //kahverengi oldu dolu yani
 
                 form2.seatNumber = int.Parse(((Control)sender).Text);
-                
+
                 form2.Show();
 
             }

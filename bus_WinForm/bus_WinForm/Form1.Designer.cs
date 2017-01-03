@@ -37,6 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelTravego = new System.Windows.Forms.Panel();
             this.panelE403 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelBusTypeName = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -116,13 +119,40 @@
             this.panelE403.Name = "panelE403";
             this.panelE403.Size = new System.Drawing.Size(147, 355);
             this.panelE403.TabIndex = 0;
-            this.panelE403.Paint += new System.Windows.Forms.PaintEventHandler(this.panelE403_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(18, 483);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Bus Type : ";
+            // 
+            // labelBusTypeName
+            // 
+            this.labelBusTypeName.AutoSize = true;
+            this.labelBusTypeName.Location = new System.Drawing.Point(19, 519);
+            this.labelBusTypeName.Name = "labelBusTypeName";
+            this.labelBusTypeName.Size = new System.Drawing.Size(0, 13);
+            this.labelBusTypeName.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(23, 562);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(71, 20);
+            this.textBox1.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(188, 474);
+            this.ClientSize = new System.Drawing.Size(188, 594);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelBusTypeName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panelE403);
             this.Controls.Add(this.panelTravego);
             this.Controls.Add(this.label3);
@@ -131,7 +161,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.busType);
-            this.MaximumSize = new System.Drawing.Size(204, 513);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -152,6 +181,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelTravego;
         private System.Windows.Forms.Panel panelE403;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label labelBusTypeName;
     }
 }
 
