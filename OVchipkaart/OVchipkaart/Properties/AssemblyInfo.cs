@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NYV_RSS")]
+[assembly: AssemblyTitle("OVchipkaart")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NYV_RSS")]
+[assembly: AssemblyProduct("OVchipkaart")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("011af0a9-f5db-4e65-a8f4-6a9c49416b6a")]
+[assembly: Guid("02b25c2f-49cf-45f5-96c0-172153962e86")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NYV_RSS.Properties
+namespace OVchipkaart.Properties
 {
 
 
