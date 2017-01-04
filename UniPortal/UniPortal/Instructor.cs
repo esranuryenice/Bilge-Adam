@@ -8,20 +8,23 @@ namespace UniPortal
 {
     class Instructor : IPersonalInfo, IEmployeeInfo
     {
-        private string _name;
-        public string name
-        {
+        //private string _name;
+        //public string name
+        //{
 
-            get
-            {
-                return _name;
-            }
+        //    get
+        //    {
+        //        return _name;
+        //    }
 
-            set
-            {
-                _name = value;
-            }
-        }
+        //    set
+        //    {
+        //        _name = value;
+        //    }
+        //}
+
+        public string name { get; set; }
+
         private string _surname;
         public string surname
         {
