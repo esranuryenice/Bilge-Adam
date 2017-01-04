@@ -18,7 +18,7 @@ namespace OVchipkaart
         {
             InitializeComponent();
 
-            _passenger = passenger;
+            _passenger = passenger; //gelen yolcunun bilgilerini aldıınn
         }
                 
 
