@@ -23,7 +23,6 @@ namespace KafeSiparis_SINAV
         private string[] yemekler = { "Kuru Fasülye", "Tavuklu Pilav", "Kaşarlı Tost", "Lazanya" };
         private string[] icecekler = { "Su", "Kola", "Limonata", "Çay", "Kahve" };
 
-
         private void Button_Click(object sender, EventArgs e)
         {
 
@@ -65,7 +64,9 @@ namespace KafeSiparis_SINAV
                     btn.Text = counter + "";
                     btn.Left = (btn.Width * j * 2);
                     btn.Top = (btn.Height * i * 2);
-                    btn.FlatStyle
+                    btn.BackColor = Color.FromArgb(240, 255, 240);
+                    btn.FlatStyle = FlatStyle.Popup;
+
                     panelMasalar.Controls.Add(btn);
                     counter++;
                 }
@@ -88,6 +89,7 @@ namespace KafeSiparis_SINAV
 
             #endregion
 
+            #region Gizlemeler
 
             comboBoxYemek.Items.AddRange(yemekler);
             comboBoxIcecek.Items.AddRange(icecekler);
@@ -96,8 +98,10 @@ namespace KafeSiparis_SINAV
             labelEkUp.Visible = false;
             groupBoxParaBirimi.Visible = false;
             buttonOde.Visible = false;
-        }
 
+            #endregion
+
+        }
 
         Masa[] masalar = new Masa[16];
         Masa m = new Masa();
@@ -206,8 +210,9 @@ namespace KafeSiparis_SINAV
 
                 if (result == DialogResult.Yes)
                 {
+                    masalar[int.Parse(labelMasaNoDown.Text)].toplamTutar -= s.adetCarpıUcret;
                     s.adetCarpıUcret = 0;
-                    listBoxSiparisler.Items.Remove(s);
+                    listBoxSiparisler.Items.Remove(s);                    
                     masalar[int.Parse(labelMasaNoDown.Text)].siparisler.Remove(s);
                 }
             }
@@ -242,11 +247,9 @@ namespace KafeSiparis_SINAV
             {
                 total = value / pound;
                 paraBirimi = "£";
-            }
-            
+            }            
 
-            return total;
-            
+            return total;            
         }
     }
 }

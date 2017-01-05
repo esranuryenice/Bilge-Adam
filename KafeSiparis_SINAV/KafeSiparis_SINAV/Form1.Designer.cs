@@ -66,7 +66,7 @@
             this.panelMasalar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panelMasalar.Location = new System.Drawing.Point(20, 63);
             this.panelMasalar.Name = "panelMasalar";
-            this.panelMasalar.Size = new System.Drawing.Size(280, 149);
+            this.panelMasalar.Size = new System.Drawing.Size(280, 163);
             this.panelMasalar.TabIndex = 0;
             // 
             // listBoxSiparisler
@@ -258,7 +258,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(133, 9);
+            this.label7.Location = new System.Drawing.Point(131, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 16);
             this.label7.TabIndex = 12;
