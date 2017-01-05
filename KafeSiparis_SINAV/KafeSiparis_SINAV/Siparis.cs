@@ -12,7 +12,8 @@ namespace KafeSiparis_SINAV
 
         public int adet { get; set; }
 
-        public double toplamUcret { get; set; }
+        public double adetCarpıUcret { get; set; }
+
 
         public double ucret
         {
@@ -64,7 +65,7 @@ namespace KafeSiparis_SINAV
 
         public override string ToString()
         {
-            return siparisAdi + " " + adet + " adet";
+            return siparisAdi + "   " + adet + " adet";
         }
     }
 }
